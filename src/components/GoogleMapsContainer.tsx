@@ -1,6 +1,6 @@
 import GoogleMapReact from 'google-map-react';
 import * as React from 'react';
-import { Secrets } from '../secrets/Secrets';
+import { Secrets } from './Secrets';
 
 const mySecrets = new Secrets();
 const GoogleMapConfig = {
