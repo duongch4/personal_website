@@ -1,2 +1,12 @@
-export const accessId = '***REMOVED***'
-export const APIkey = '***REMOVED***'
+export class Secrets {
+	private accessId:string = '***REMOVED***';
+	private APIkey:string = '***REMOVED***';
+
+	public getAPIkey():string {
+		return this.APIkey;
+	}
+
+	public getAccessId():string {
+		return this.accessId;
+	}
+}

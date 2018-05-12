@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { FaEnvelopeSquare, FaFilePdfO, FaGithubSquare, FaLinkedinSquare } from 'react-icons/lib/fa';
-import profileImg from '../images/profileImg.jpg';
+import profileImg from '../images/mainImg.jpg';
 import '../stylesheets/Home.css';
+import GoogleMapsContainer from './GoogleMapsContainer';
 
 class Home extends React.Component {
 	public render() {
@@ -18,6 +19,8 @@ class Home extends React.Component {
 							<br />
 							Currently I am living in Vancouver Canada.
 						</p>
+
+						<GoogleMapsContainer lat={59.95} lng={30.3} zoom={11} />
 	
 						<p><strong>Connect with me on social media:</strong></p>
 
@@ -33,7 +36,7 @@ class Home extends React.Component {
 						</a>
 					</div>
 
-					<div className="col-5">
+					<div className="col-5 text-center">
 						<img src={profileImg} className="main-img" alt="" />
 					</div>
 				</div>
