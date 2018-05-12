@@ -20,7 +20,7 @@ class Home extends React.Component {
 							Currently I am living in Vancouver Canada.
 						</p>
 
-						<GoogleMapsContainer lat={59.95} lng={30.3} zoom={11} />
+						<GoogleMapsContainer lat={49.255} lng={-123.138} zoom={11} />
 	
 						<p><strong>Connect with me on social media:</strong></p>
 
