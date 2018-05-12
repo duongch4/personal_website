@@ -21,9 +21,9 @@ class Home extends React.Component {
 						</p>
 
 						<GoogleMapsContainer lat={49.255} lng={-123.138} zoom={11} />
-	
-						<p><strong>Connect with me on social media:</strong></p>
 
+						<br />
+						<p><strong>Connect with me on social media:</strong></p>
 						<a href="https://www.linkedin.com/in/bang-chi-duong-6857969a/" target="_blank" rel="noopener noreferrer"><FaLinkedinSquare className="social-icons" aria-hidden="true" /></a>
 						<a href="https://github.com/duongch4" target="_blank" rel="noopener noreferrer"><FaGithubSquare className="social-icons" aria-hidden="true" /></a>
 						<a href="mailto:bangchi.duong.20193@outlook.com?Subject=Hello%20there!" target="_top"><FaEnvelopeSquare className="social-icons" aria-hidden="true" /></a>
