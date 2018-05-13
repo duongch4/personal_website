@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-// import logo from '../images/logo.svg';
-
 class NavigationBar extends React.Component {
 	public render() {
 		return (

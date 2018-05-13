@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FaEnvelopeSquare, FaFilePdfO, FaGithubSquare, FaLinkedinSquare } from 'react-icons/lib/fa';
 import profileImg from '../images/mainImg.jpg';
 import '../stylesheets/Home.css';
-import GoogleMapsContainer from './GoogleMapsContainer';
+import GoogleMapContainer from './GoogleMapContainer';
 
 class Home extends React.Component {
 	public render() {
@@ -20,7 +20,7 @@ class Home extends React.Component {
 							Currently I am living in Vancouver Canada.
 						</p>
 
-						<GoogleMapsContainer lat={49.255} lng={-123.138} zoom={11} />
+						<GoogleMapContainer />
 
 						<br />
 						<p><strong>Connect with me on social media:</strong></p>
