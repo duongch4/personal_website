@@ -44,8 +44,8 @@
 }
 
 .home .main-img {
-    border-radius: 70%;
-    width: 30vw;
-    height: 30vw;
-    padding: 20px;
+    border-radius: 80%;
+    width: 40vw;
+    height: 40vw;
+    padding: 5px;
 }

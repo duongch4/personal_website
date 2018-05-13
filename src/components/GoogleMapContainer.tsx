@@ -13,7 +13,7 @@ interface IMapProps {
 	zoom?: number;
 }
 
-const GoogleMapContainer: React.StatelessComponent<IMapProps> = ({ lat = 49.255, lng = -123.138, zoom = 11, children }) => {
+const GoogleMapContainer: React.StatelessComponent<IMapProps> = ({ lat = 49.255, lng = -123.127, zoom = 11, children }) => {
 	const center = { lat, lng };
 	return (
 		<div className="map">
