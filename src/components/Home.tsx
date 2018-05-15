@@ -9,11 +9,11 @@ class Home extends React.Component {
 		return (
 			<div className="home container">
 				<div className="home-intro row">
-					<div className="col-12 text-left">
+					<div className="col-sm-12 text-left">
 						<p><strong>Hi there, I am Bang Chi Duong!</strong></p>
 					</div>
 
-					<div className="col-7 text-left">
+					<div className="col-sm-7 text-left">
 						<p>
 							I am an aspiring <strong>full-stack web developer</strong> and <strong>data scientist</strong>. 
 							<br />
@@ -36,9 +36,9 @@ class Home extends React.Component {
 						</a>
 					</div>
 
-					<div className="col-5 text-center">
-						<img src={profileImg} className="main-img" alt="" />
-					</div>
+
+					<img src={profileImg} className="main-img col-sm-5 img-fluid rounded-circle" alt="HomeImage" />
+					
 				</div>
 			</div>
 		);
