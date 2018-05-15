@@ -10,7 +10,7 @@ class Contact extends React.Component {
 			<div className="contact container">
 				<div className="row">
 
-					<img src={contactImg} className="col-sm-6 img-fluid d-none d-sm-block" alt="ContactImage" />
+					<img src={contactImg} className="contact-img col-sm-6 img-fluid" alt="ContactImage" />
 
 					<div className="col-sm-6 text-left">
 						<h3 className="contact-header">LET'S TALK</h3>

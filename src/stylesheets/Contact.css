@@ -1,5 +1,6 @@
 .contact-header {
-    
+    font-family: 'Montserrat';
+    font-weight: 900;
 }
 
 .contact .btn {
@@ -27,4 +28,12 @@
     border-color: greenyellow;
     color: black;
     font-family: 'Skranji';
+}
+
+.contact-img {
+    width: 100%;
+    max-height: 300px;
+    max-width: 400px;
+    overflow-y: hidden;
+    margin: auto;
 }
