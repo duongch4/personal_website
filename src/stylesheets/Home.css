@@ -4,7 +4,8 @@
 }
 
 .home .home-intro {
-    padding: 30px 10px 10px 15px;
+    padding-top: 30px;
+    padding-left: 15px;
 }
 
 .home .social-icons {
