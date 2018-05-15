@@ -36,7 +36,7 @@ class Home extends React.Component {
 						</a>
 					</div>
 
-					<img src={profileImg} className="main-img col-sm-5 img-fluid rounded-circle hidden-md-down" alt="HomeImage" />
+					<img src={profileImg} className="main-img col-sm-5 img-fluid rounded-circle d-none d-sm-block" alt="HomeImage" />
 					
 				</div>
 			</div>
