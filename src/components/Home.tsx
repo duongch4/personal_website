@@ -31,7 +31,7 @@ class Home extends React.Component {
 						<br />
 						<a href="https://1drv.ms/b/s!AlPEhSAAUWCmg-1M4fVovD2or56YPQ" target="_blank" rel="noopener noreferrer">
 							<button className="resume-button">
-								Resume <FaFilePdfO aria-hidden="true" />
+								Resume <FaFilePdfO className="pdf-icon" aria-hidden="true" />
 							</button>
 						</a>
 					</div>

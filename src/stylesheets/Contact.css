@@ -1,0 +1,30 @@
+.contact-header {
+    
+}
+
+.contact .btn {
+    color: initial;
+    border-color: darkturquoise;
+}
+
+.contact .social-icons {
+    color: orangered;
+    display: inline-block;
+    font-size: 24px;
+    margin-bottom: 2px;
+}
+
+.contact .pdf-icon {
+    color: orangered;
+    display: inline-block;
+    font-size: 21px;
+    margin-bottom: 3px;
+}
+
+.contact .btn:hover {
+    background-color: greenyellow;
+    border: 3px solid;
+    border-color: greenyellow;
+    color: black;
+    font-family: 'Skranji';
+}
