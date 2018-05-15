@@ -3,6 +3,10 @@
     padding: 50px;
 }
 
+.home .home-intro {
+    padding: 30px 10px 10px 15px;
+}
+
 .home .social-icons {
     color: black;
     /*margin: 7px;*/
@@ -43,7 +47,4 @@
     color: white;
 }
 
-.home .main-img {
-    border-radius: 80%;
-    padding: 5px;
-}
+
