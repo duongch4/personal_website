@@ -6,7 +6,7 @@
 .contact .btn {
     color: initial;
     border: 0.1em solid black;
-    border-radius: 0.5em;
+    border-radius: 0.33em;
 }
 
 .contact .social-icons {
@@ -31,5 +31,4 @@
     max-height: 40em;
     max-width: 50em;
     overflow-y: hidden;
-    margin: auto;
 }

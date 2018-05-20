@@ -1,0 +1,17 @@
+.footer {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 0.05em;
+}
+
+.footer .social-icons {
+    color: yellow;
+    font-size: 1.2em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    margin-bottom: -0.2em;
+}
