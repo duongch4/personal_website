@@ -5,35 +5,31 @@
 
 .contact .btn {
     color: initial;
-    border-color: darkturquoise;
+    border: 0.1em solid black;
+    border-radius: 0.5em;
 }
 
 .contact .social-icons {
     color: orangered;
-    display: inline-block;
-    font-size: 24px;
-    margin-bottom: 2px;
+    font-size: 1.13em;
 }
 
 .contact .pdf-icon {
     color: orangered;
-    display: inline-block;
-    font-size: 21px;
-    margin-bottom: 3px;
+    font-size: 1.13em;
 }
 
 .contact .btn:hover {
     background-color: greenyellow;
-    border: 3px solid;
-    border-color: greenyellow;
+    border: 0.1em solid greenyellow;
     color: black;
     font-family: 'Skranji';
 }
 
 .contact-img {
     width: 100%;
-    max-height: 300px;
-    max-width: 400px;
+    max-height: 40em;
+    max-width: 50em;
     overflow-y: hidden;
     margin: auto;
 }

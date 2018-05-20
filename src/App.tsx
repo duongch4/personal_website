@@ -5,8 +5,6 @@ import Home from './components/Home';
 import NavigationBar from './components/NavigationBar';
 import Profile from './components/Profile';
 
-import faDownArrow from './images/faDownArrow.svg';
-
 import './App.css';
 
 // import Projects from './components/Projects';
@@ -22,7 +20,7 @@ class App extends React.Component {
 				<Home />
 
 				<div className="downArrow">
-					<img src={faDownArrow} alt="Scroll" width="80px" />
+					<i className="fas fa-angle-double-down fa-5x" />
 				</div>
 
 				<h2 id="profile">PROFILE</h2>

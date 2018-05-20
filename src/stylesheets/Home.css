@@ -1,46 +1,38 @@
 .home {
     background-color: #FFFFFF;
-    padding: 50px;
+    padding: 2em;
 }
 
 .home .home-intro {
-    padding-top: 30px;
-    padding-left: 15px;
+    padding-top: 3em;
 }
 
 .home .social-icons {
     color: black;
-    display: inline-block;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    font-size: 30px;
+    font-size: 2em;
+    margin: 0.2em;
 }
 
 .home .social-icons:hover {
     color: #00f2e7;
-    display: inline-block;
-    font-size: 40px;
+    font-size: 2.2em;
 }
 
 .home .pdf-icon {
-    display: inline-block;
-    font-size: 24px;
-    padding-bottom: 5px;
+    font-size: 1.1em;
 }
 
 .home .resume-button {
     font-family: "Montserrat", sans-serif;
     background-color: white;
     color: black;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: 700;
-    border: 2px solid black;
-    border-radius: 3px;
+    border: 0.1em solid black;
+    border-radius: 0.5em;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    /*margin: 10px;*/
-    padding: 5px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -48,7 +40,6 @@
 
 .home .resume-button:hover {
     background-color: #00f2e7;
-    border: 2px solid;
     border-color: #00f2e7;
     color: white;
 }
