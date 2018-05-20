@@ -1,5 +1,5 @@
 import * as React from 'react';
-import profileImg from '../images/mainImg.jpg';
+import homeImg from '../images/homeImg.jpg';
 import '../stylesheets/Home.css';
 import GoogleMapContainer from './GoogleMapContainer';
 
@@ -12,7 +12,7 @@ class Home extends React.Component {
 						<h4><strong>Hi there, I am Bang Chi Duong!</strong></h4>
 					</div>
 
-					<div className="col-sm-7 text-left">
+					<div className="col-sm-6 text-left">
 						<p>
 							I am an aspiring <strong>full-stack web developer</strong> and <strong>data scientist</strong>. 
 							<br />
@@ -35,7 +35,7 @@ class Home extends React.Component {
 						</a>
 					</div>
 
-					<img src={profileImg} className="main-img col-sm-5 img-fluid rounded-circle d-none d-sm-block" alt="HomeImage" />
+					<div><img src={homeImg} className="home-img col-sm-6 img-fluid" alt="HomeImage" /></div>
 					
 				</div>
 			</div>
@@ -44,3 +44,5 @@ class Home extends React.Component {
 }
 
 export default Home;
+
+// <img src={profileImg} className="main-img col-sm-5 img-fluid rounded-circle d-none d-sm-block" alt="HomeImage" />
