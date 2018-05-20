@@ -5,13 +5,26 @@ class Profile extends React.Component {
 	public render() {
 		return (
 			<div className="profile container">
-				<p> Test </p>
-				<p> Just testing </p>
-				<p> Just testin	g </p>
-				<p> Just testing </p>
-				<p> Just testing </p>
-			</div>
+				<div className="row">
+					<div className="col-sm-6 profile-history">
+						<h3>HISTORY</h3>
+						<p>
+							I come from <strong>Ho Chi Minh, Vietnam</strong>, a beautiful country with lots of delicious food <i className="fas fa-utensils" />.
+							I earned my first <i className="fas fa-flask" /> degree in <strong>Physics, Statistics and Chemistry</strong> from the <a href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto <i className="fas fa-external-link-alt" /></a>.
+							I then completed a 1-year master's degree in <strong>Bioinformatics</strong> from the <a href="https://www.uoguelph.ca" target="_blank" rel="noopener noreferrer">University of Guelph <i className="fas fa-external-link-alt" /></a>, with a project in cancer genomic and proteomic statistical analyses.
+							During this period, I focused on expanding my <strong>machine learning</strong> theoretical knowledge and practical skill sets, mostly in <strong>Python</strong> and <strong>R</strong>.
+						</p>
+					</div>
 
+					<div className="col-sm-6 profile-current">
+						<h3>CURRENT</h3>
+						<p>
+							I am pursuing a second bachelor's degree in <strong>Computer Science</strong> at the University of British Columbia.
+							I love visualising and analysing data 
+						</p>
+					</div>
+				</div>
+			</div>
 		);
 	}
 }
