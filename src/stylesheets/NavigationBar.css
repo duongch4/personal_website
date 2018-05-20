@@ -1,0 +1,21 @@
+.navbar .navbar-brand:hover {
+    color: aqua;
+}
+
+.navbar .navbar-nav li a:hover {
+    color: aqua !important;
+    background-color: transparent !important;
+}
+
+.navbar .navbar-nav li a:focus {
+    color: aqua !important;
+    background-color: transparent !important;
+}
+
+.navbar .navbar-toggler {
+    background-color: dimgrey;
+}
+
+.navbar .navbar-toggler .burger-icon {
+    color: aqua;
+}

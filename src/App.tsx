@@ -21,7 +21,7 @@ class App extends React.Component {
 				<Home />
 
 				<div className="downArrow">
-					<i className="fas fa-angle-double-down fa-5x" />
+					<i className="fas fa-angle-double-down fa-3x" />
 				</div>
 
 				<h2 id="profile">PROFILE</h2>

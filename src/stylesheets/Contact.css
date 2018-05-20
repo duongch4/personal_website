@@ -1,29 +1,45 @@
+.contact {
+    background-color: navajowhite;
+    padding: 2em;
+}
+
 .contact-header {
-    font-family: 'Montserrat';
+    font-family: 'Skranji';
     font-weight: 900;
+    margin-top: 1.2em;
 }
 
 .contact .btn {
-    color: initial;
+    font-family: "Skranji", sans-serif;
+    background-color: white;
+    color: black;
+    font-size: 1em;
+    font-weight: 700;
     border: 0.1em solid black;
     border-radius: 0.33em;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.contact .btn:hover {
+    background-color: #00f2e7;
+    border: 0.1em solid #00f2e7;
+    color: white;
+    font-family: 'Skranji';
 }
 
 .contact .social-icons {
-    color: orangered;
+    color: black;
     font-size: 1.13em;
 }
 
 .contact .pdf-icon {
-    color: orangered;
-    font-size: 1.13em;
-}
-
-.contact .btn:hover {
-    background-color: greenyellow;
-    border: 0.1em solid greenyellow;
     color: black;
-    font-family: 'Skranji';
+    font-size: 1.13em;
 }
 
 .contact-img {

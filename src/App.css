@@ -2,8 +2,27 @@
 
 .App {
     text-align: center;
+    background-image: url('./images/appBackground.jpg');
 }
 
 .downArrow {
-    background-color: aquamarine;
+    color: aquamarine;
+}
+
+#profile  {
+    color: lightskyblue;
+    font-family: 'Pacifico';
+    margin-top: 1em;
+}
+
+#projects {
+    color: lightskyblue;
+    font-family: 'Pacifico';
+    margin-top: 1em;
+}
+
+#contact {
+    color: lightskyblue;
+    font-family: 'Pacifico';
+    margin-top: 1em;
 }
