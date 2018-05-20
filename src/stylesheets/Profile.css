@@ -2,3 +2,15 @@
     background-color: navajowhite;
     padding: 2em;   
 }
+
+.profile .profile-history h3 {
+    font-family: 'Great Vibes';
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.profile .profile-current h3 {
+    font-family: 'Great Vibes';
+    font-weight: 700;
+    font-size: 2em;
+}
