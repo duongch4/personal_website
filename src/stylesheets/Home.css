@@ -3,7 +3,7 @@
     padding: 2em;
 }
 
-.home .home-intro {
+.home .row {
     padding-top: 3em;
 }
 
@@ -44,12 +44,15 @@
     color: white;
 }
 
+.home .img-sect {
+    padding-top: 3em;
+}
+
 .home .home-img {
     width: 100%;
     border-radius: 20%;
-    max-height: 400px;
-    max-width: 400px;
+    max-height: 350px;
+    max-width: 300px;
     overflow-y: hidden;
-    padding: 1.2em;
 }
 

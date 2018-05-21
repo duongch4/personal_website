@@ -6,20 +6,17 @@ import GoogleMapContainer from './GoogleMapContainer';
 class Home extends React.Component {
 	public render() {
 		return (
-			<div className="container home">
+			<div className="home container">
 				<div className="row">
-					<div className="col-sm-12 home-intro text-left">
-						<h4><strong>HI, I'M BANG CHI DUONG!</strong></h4>
-					</div>
 
-					<div className="col-sm-6 text-left">
+					<div className="col-sm-6 text-center">
+						<h4><strong>HI, I'M BANG CHI DUONG!</strong></h4>
 						<p>
-							I am an aspiring <strong>full-stack web developer</strong> and <strong>data scientist</strong>. 
-							<br />
+							I am an aspiring <strong>full-stack web developer</strong> and <strong>data scientist</strong>.
 							Currently I am living in Vancouver Canada.
 						</p>
 
-						<GoogleMapContainer />
+						<div className="col-sm-12"><GoogleMapContainer /></div>
 
 						<br />
 						<p><strong>Connect with me on social media:</strong></p>
@@ -35,8 +32,8 @@ class Home extends React.Component {
 						</a>
 					</div>
 
-					<div><img src={homeImg} className="home-img col-sm-6 img-fluid" alt="HomeImage" /></div>
-					
+					<div className="col-sm-6 img-sect"><img src={homeImg} className="home-img img-fluid d-none d-sm-block" alt="HomeImage" /></div>
+
 				</div>
 			</div>
 		);
