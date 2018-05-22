@@ -12,15 +12,15 @@ class NavigationBar extends React.Component {
 				</button>
 
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul className="navbar-nav">
+					<ul className="navbar-nav ml-auto">
 						<li className="nav-item"><a className="nav-link" href="#profile">Profile</a></li>
 						<li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
 						<li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
 					</ul>
 				</div>
 			</nav>
-		);
-	}
-}
-
+				);
+			}
+		}
+		
 export default NavigationBar;
