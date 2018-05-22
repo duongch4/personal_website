@@ -10,7 +10,7 @@ class Projects extends React.Component {
         return (
             <div className="projects container">
                 <div className="row">
-                    <div className="col-sm-6 item">
+                    <div className="col-md-6 item">
                         <img src={objectDetection} className="thumb" alt="ObjectDetectionImage" />
                         <div className="overlay container">
                             <div className="text">
@@ -21,7 +21,7 @@ class Projects extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-6 item">
+                    <div className="col-md-6 item">
                         <img src={multipleClassifiers} className="thumb" alt="MultipleClassifersImage" />
                         <div className="overlay">
                             <div className="text">
