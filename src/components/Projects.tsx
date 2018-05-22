@@ -12,7 +12,7 @@ class Projects extends React.Component {
             <div className="projects container">
 
                 <div className="row">
-                    <div className="col-lg-4 mb-md-4">
+                    <div className="col-lg-4 mb-4">
                         <h5>Object Detection <i className="fas fa-search" /></h5>
                         <div className="item col-md-12">
                             <img src={objectDetection} className="thumb-img" alt="ObjectDetectionImage" />
@@ -25,7 +25,7 @@ class Projects extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 mb-md-4">
+                    <div className="col-lg-4 mb-4">
                         <h5>Multiple Classifiers <i className="fas fa-dna" /></h5>
                         <div className="item col-md-12">
                             <img src={multipleClassifiers} className="thumb-img" alt="MultipleClassifersImage" />
@@ -38,7 +38,7 @@ class Projects extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 mb-md-4">
+                    <div className="col-lg-4 mb-4">
                         <h5>Bioinformatics <i className="fas fa-dna" /></h5>
                         <div className="item col-md-12">
                             <img src={bioinformatics} className="thumb-img" alt="BioinformaticsImage" />
