@@ -1,5 +1,6 @@
 import * as React from 'react';
 import homeImg from '../images/homeImg.jpg';
+import typescriptIcon from '../images/typescript.svg';
 import '../stylesheets/Home.css';
 import GoogleMapContainer from './GoogleMapContainer';
 
@@ -14,6 +15,7 @@ class Home extends React.Component {
 						<p>
 							I am an aspiring <strong>full-stack web developer</strong> and <strong>data scientist</strong>.
 							Currently I am living in Vancouver Canada.
+							This personal website is created with ❤️ using <strong>ReactJS</strong><i className="fab fa-react" />, <strong>TypeScript</strong><img src={typescriptIcon} className="typescript-icon" alt="TypeScriptIcon" />, <strong>HTML</strong><i className="fab fa-html5" />, custom <strong>CSS</strong><i className="fab fa-css3-alt" />, and <strong>Bootstrap</strong>.
 						</p>
 
 						<div className="col-sm-12"><GoogleMapContainer /></div>

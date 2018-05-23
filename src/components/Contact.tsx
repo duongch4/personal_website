@@ -24,22 +24,10 @@ class Contact extends React.Component {
 						</a></p>
 	
 					</div>
-				</div>
+				</div>	
 			</div>
 		);
 	}
 }
 
 export default Contact;
-
-/*
-<p>
-	<a href="https://github.com/duongch4" target="_blank" rel="noopener noreferrer">
-		<button type="button" className="btn btn-light">Github <i className="fab fa-github-square social-icons" aria-hidden="true" /></button>
-	</a>
-
-	<a href="https://www.linkedin.com/in/bang-chi-duong-6857969a/" target="_blank" rel="noopener noreferrer">
-		<button type="button" className="btn btn-light">LinkedIn <i className="fab fa-linkedin social-icons" aria-hidden="true" /></button>
-	</a>
-</p>
-*/

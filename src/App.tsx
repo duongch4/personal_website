@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Contact from './components/Contact';
+import Credit from './components/Credit';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import NavigationBar from './components/NavigationBar';
@@ -32,11 +33,12 @@ class App extends React.Component {
 				<h2 id="contact">CONTACT</h2>
 				<Contact />
 
+				<h2 id="credit">CREDIT</h2>
+				<Credit />
+
 				<Footer />
 
 			</div>
-
-
 		);
 	}
 }
