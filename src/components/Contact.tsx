@@ -12,7 +12,7 @@ class Contact extends React.Component {
 					<img src={contactImg} className="contact-img col-sm-6 img-fluid" alt="ContactImage" />
 
 					<div className="col-sm-6 text-center">
-						<h3 className="contact-header">LET'S TALK</h3>
+						<h3>LET'S TALK</h3>
 						<p>I always look forwards to new opportunities.</p>
 
 						<p><a href="https://1drv.ms/b/s!AlPEhSAAUWCmg-1M4fVovD2or56YPQ" target="_blank" rel="noopener noreferrer">

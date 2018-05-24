@@ -10,7 +10,6 @@ class Projects extends React.Component {
     public render() {
         return (
             <div className="projects container">
-
                 <div className="row">
                     <div className="col-lg-4 mb-4">
                         <h5>Object Detection <i className="fas fa-search" /></h5>

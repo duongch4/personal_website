@@ -4,17 +4,15 @@
 }
 
 .contact-header {
-    font-family: 'Skranji';
-    font-weight: 900;
     margin-top: 1.2em;
 }
 
 .contact .btn {
-    font-family: "Skranji", sans-serif;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 1.25em;
     background-color: white;
     color: black;
-    font-size: 1em;
-    font-weight: 700;
     border: 0.1em solid black;
     border-radius: 0.33em;
     text-align: center;
@@ -29,15 +27,9 @@
     background-color: #00f2e7;
     border: 0.1em solid #00f2e7;
     color: white;
-    font-family: 'Skranji';
 }
 
-.contact .social-icons {
-    color: black;
-    font-size: 1.13em;
-}
-
-.contact .pdf-icon {
+.contact .social-icons, .pdf-icon {
     color: black;
     font-size: 1.13em;
 }

@@ -1,3 +1,15 @@
+.navbar {
+    font-family: 'Open Sans Condensed';
+    font-weight: Bold;
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    font-family: 'Open Sans Condensed';
+    font-weight: Bold;
+    font-size: 1.3em;
+}
+
 .navbar .navbar-brand:hover {
     color: aqua;
 }

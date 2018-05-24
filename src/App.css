@@ -1,4 +1,12 @@
 /*================================= App ========================================*/
+:root {
+    --section-font-family: "Open Sans Condensed";
+    --section-color: lightskyblue;
+    --section-margin-top: 0.7em;
+    --section-font-weight: bold;
+
+    --body-font-family: "Open Sans";
+}
 
 .App {
     text-align: center;
@@ -9,26 +17,22 @@
     color: aquamarine;
 }
 
-#profile  {
-    color: lightskyblue;
-    font-family: 'Pacifico';
-    margin-top: 1em;
+body h2, h3, h4, h5, h6 {
+	line-height: 1.75em;
+    letter-spacing: 0.02em;
+    font-family: var(--body-font-family);
+    font-weight: bold;
 }
 
-#projects {
-    color: lightskyblue;
-    font-family: 'Pacifico';
-    margin-top: 1em;
+body p {
+	line-height: 1.75em;
+    letter-spacing: 0.02em;
+    font-family: var(--body-font-family);
 }
 
-#contact {
-    color: lightskyblue;
-    font-family: 'Pacifico';
-    margin-top: 1em;
-}
-
-#credit {
-    color: lightskyblue;
-    font-family: 'Pacifico';
-    margin-top: 1em;
+body #profile, #projects, #contact, #credit  {
+    color: var(--section-color);
+    font-family: var(--section-font-family);
+    font-weight: var(--section-font-weight);
+    margin-top: var(--section-margin-top);
 }

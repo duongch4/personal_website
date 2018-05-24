@@ -3,10 +3,6 @@
     padding: 2em;
 }
 
-.projects h5 {
-    font-family: 'Righteous';
-}
-
 .item {
     padding: 0;
 }
@@ -40,7 +36,7 @@
 .item:hover .overlay {
     bottom: 0;
     height: 100%;
-    border: 2px solid #eb4512;
+    border: 5px solid #eb4512;
 }
 
 .text {

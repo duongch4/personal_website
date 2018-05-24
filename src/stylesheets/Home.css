@@ -43,11 +43,11 @@
 }
 
 .home .resume-button {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 1.25em;
     background-color: white;
     color: black;
-    font-size: 1.25em;
-    font-weight: 700;
     border: 0.1em solid black;
     border-radius: 0.33em;
     text-align: center;
