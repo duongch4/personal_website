@@ -10,6 +10,33 @@ class Profile extends React.Component {
 					<div className="col-sm-4 technical-skills">
 						<h4>Technical Skills</h4>
 
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						{/* <i className="fab fa-linkedin" aria-hidden="true" />
 						<i className="fab fa-linkedin" aria-hidden="true" />
 						<i className="fab fa-linkedin" aria-hidden="true" />
 						<i className="fab fa-linkedin" aria-hidden="true" />
@@ -30,9 +57,7 @@ class Profile extends React.Component {
 						<i className="fab fa-linkedin" aria-hidden="true" />
 						<i className="fab fa-linkedin" aria-hidden="true" />
 						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
+						<i className="fab fa-linkedin" aria-hidden="true" /> */}
 
 
 						{/* <div className="col-sm-12 icons-sect">
