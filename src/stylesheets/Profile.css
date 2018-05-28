@@ -20,7 +20,9 @@
 
 #profile [class^="devicon"] {
   margin: 0.3em;
-  font-size: 3em;
+  /* font-size: 3em; */
+  width: 3em;
+  color: black;
 }
 
 #profile .profile-text {

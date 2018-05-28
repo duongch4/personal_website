@@ -1,5 +1,19 @@
 import * as React from 'react';
+
+import bootstrapImg from '../images/bootstrap-plain-wordmark.svg';
+import cImg from '../images/c-plain.svg';
+import cplusplusImg from '../images/cplusplus-plain.svg';
+import css3Img from '../images/css3-plain-wordmark.svg';
+import gitImg from '../images/git-plain-wordmark.svg';
+import html5Img from '../images/html5-plain-wordmark.svg';
+import javaImg from '../images/java-plain-wordmark.svg';
+import javascriptImg from '../images/javascript-plain.svg';
+import pythonImg from '../images/python-plain-wordmark.svg';
+import reactImg from '../images/react-original-wordmark.svg';
+import typescriptImg from '../images/typescript-plain.svg';
+
 import '../stylesheets/Profile.css';
+
 
 class Profile extends React.Component {
 	public render() {
@@ -10,54 +24,23 @@ class Profile extends React.Component {
 					<div className="col-sm-4 technical-skills">
 						<h4>Technical Skills</h4>
 
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
+						<div className="col-sm-12 icons-sect">
 
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						<i className="devicon-react-original-wordmark" aria-hidden="true" />
-						{/* <i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" />
-						<i className="fab fa-linkedin" aria-hidden="true" /> */}
+							<img src={reactImg} className="devicon-react-original-wordmark" alt="reactIcon" />
+							<img src={typescriptImg} className="devicon-typescript-plain" alt="reactIcon" />
+							<img src={javascriptImg} className="devicon-javascript-plain" alt="reactIcon" />
+							<img src={html5Img} className="devicon-html5-plain-wordmark" alt="reactIcon" />
+							<img src={css3Img} className="devicon-css3-plain-wordmark" alt="reactIcon" />
+							<img src={bootstrapImg} className="devicon-bootstrap-plain-wordmark" alt="reactIcon" />
+
+							<img src={javaImg} className="devicon-java-plain-wordmark" alt="reactIcon" />
+							<img src={cImg} className="devicon-c-plain-wordmark" alt="reactIcon" />
+							<img src={cplusplusImg} className="devicon-cplusplus-plain-wordmark" alt="reactIcon" />
+							<img src={pythonImg} className="devicon-python-plain-wordmark" alt="reactIcon" />
+
+							<img src={gitImg} className="devicon-git-plain-wordmark" alt="reactIcon" />
+
+						</div>
 
 
 						{/* <div className="col-sm-12 icons-sect">
