@@ -10,7 +10,7 @@ class Profile extends React.Component {
 					<div className="col-sm-4 technical-skills">
 						<h4>Technical Skills</h4>
 
-						<div className="col-sm-12 icons-sect">
+
 
 							<i className="devicon-react-original-wordmark" />
 							<i className="devicon-typescript-plain" />
@@ -25,8 +25,6 @@ class Profile extends React.Component {
 							<i className="devicon-python-plain-wordmark" />
 
 							<i className="devicon-git-plain-wordmark" />
-
-						</div>
 
 					</div>
 
