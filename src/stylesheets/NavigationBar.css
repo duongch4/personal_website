@@ -1,13 +1,18 @@
+
 .navbar {
-    font-family: 'Open Sans Condensed';
-    font-weight: Bold;
+    font-family: 'Roboto';
+    font-weight: 500;
     text-transform: uppercase;
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 .navbar-brand {
-    font-family: 'Open Sans Condensed';
-    font-weight: Bold;
-    font-size: 1.3em;
+    font-size: 2em;
 }
 
 .navbar .navbar-brand:hover {

@@ -9,10 +9,10 @@ import '../stylesheets/Projects.css';
 class Projects extends React.Component {
     public render() {
         return (
-            <div className="projects container">
+            <div id="projects" className="container">
+                <div className="row header"><h2>Projects</h2></div>
                 <div className="row">
-                    <div className="col-lg-4 mb-4">
-                        <h5>Object Detection <i className="fas fa-search" /></h5>
+                    <div className="col-lg-4 mb-4">   
                         <div className="item col-md-12">
                             <img src={objectDetection} className="thumb-img" alt="ObjectDetectionImage" />
                             <div className="overlay">
@@ -23,9 +23,9 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        <h5><strong>Object Detection</strong> <i className="fas fa-search" /></h5>
                     </div>
                     <div className="col-lg-4 mb-4">
-                        <h5>Multiple Classifiers <i className="fas fa-dna" /></h5>
                         <div className="item col-md-12">
                             <img src={multipleClassifiers} className="thumb-img" alt="MultipleClassifersImage" />
                             <div className="overlay">
@@ -36,9 +36,9 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        <h5><strong>Multiple Classifiers</strong> <i className="fas fa-dna" /></h5>
                     </div>
                     <div className="col-lg-4 mb-4">
-                        <h5>Bioinformatics <i className="fas fa-dna" /></h5>
                         <div className="item col-md-12">
                             <img src={bioinformatics} className="thumb-img" alt="BioinformaticsImage" />
                             <div className="overlay">
@@ -49,6 +49,7 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        <h5><strong>Bioinformatics</strong> <i className="fas fa-dna" /></h5>
                     </div>
                 </div>
             </div>

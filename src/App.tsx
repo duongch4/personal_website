@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import Contact from './components/Contact';
-import Credit from './components/Credit';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import NavigationBar from './components/NavigationBar';
@@ -17,24 +16,10 @@ class App extends React.Component {
 
 				<NavigationBar />
 
-				<div id="home" />
 				<Home />
-
-				<div className="downArrow">
-					<i className="fas fa-angle-double-down fa-3x" />
-				</div>
-
-				<h2 id="profile">PROFILE</h2>
 				<Profile />
-
-				<h2 id="projects">PROJECTS</h2>
 				<Projects />
-
-				<h2 id="contact">CONTACT</h2>
 				<Contact />
-
-				<h2 id="credit">CREDIT</h2>
-				<Credit />
 
 				<Footer />
 

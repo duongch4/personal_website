@@ -1,10 +1,15 @@
-.projects {
-    background-color: navajowhite;
+#projects {
+    background-color: white;
     padding: 2em;
 }
 
 .item {
     padding: 0;
+    border: 5px solid black;
+}
+
+.item:hover {
+    border: none;
 }
 
 .item .thumb-img {
@@ -36,7 +41,7 @@
 .item:hover .overlay {
     bottom: 0;
     height: 100%;
-    border: 5px solid #eb4512;
+    border: 5px solid #DCAF68;
 }
 
 .text {
@@ -53,6 +58,6 @@
 }
   
 .text a {
-    color: #eb4512;
+    color: #DCAF68;
     text-decoration: none;
 }

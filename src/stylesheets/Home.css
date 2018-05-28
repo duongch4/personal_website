@@ -1,48 +1,47 @@
-.home {
-    background-color: navajowhite;
+#home {
+    background-color: white;
     padding: 2em;
 }
 
-.home .row {
+#home .row {
     padding-top: 3em;
 }
 
-.home .fa-react {
-    color: rgb(18, 186, 216);
-    font-weight: 900;
+#home hr {
+    border-color: black;
+    width: 50%;
 }
 
-.home .fa-html5 {
-    color: orangered;
+#home p strong {
+    color: rgb(67, 147, 179);
 }
 
-.home .fa-css3-alt {
-    color: blue;
+#home h6 {
+    color: rgb(50, 112, 136);
 }
 
-.home .typescript-icon {
-    width: 1em;
-    padding-bottom: 0.2em;
+#home .social-icons-sect {
+    margin: 1em;
 }
 
-.home .social-icons {
+#home .social-icons {
     color: black;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     font-size: 2em;
-    margin: 0.2em;
+    margin: 0 0.5em 0 0.5em;
 }
 
-.home .social-icons:hover {
-    color: #00f2e7;
+#home .social-icons:hover {
+    color: #DCAF68;
     font-size: 2.2em;
 }
 
-.home .pdf-icon {
+#home .pdf-icon {
     font-size: 1.1em;
 }
 
-.home .resume-button {
+#home .resume-button {
     font-family: "Open Sans";
     font-weight: bold;
     font-size: 1.25em;
@@ -56,21 +55,20 @@
     cursor: pointer;
 }
 
-.home .resume-button:hover {
-    background-color: #00f2e7;
-    border-color: #00f2e7;
+#home .resume-button:hover {
+    background-color: #DCAF68;
+    border-color: #DCAF68;
     color: white;
 }
 
-.home .img-sect {
-    padding-top: 3em;
+#home .img-sect {
+    overflow: hidden;
+    margin: 0;
 }
 
-.home .home-img {
+#home .home-img {
+    display: block;
+    border-radius: 50%;
     width: 100%;
-    border-radius: 20%;
-    max-height: 350px;
-    max-width: 300px;
-    overflow-y: hidden;
 }
 

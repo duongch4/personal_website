@@ -4,24 +4,46 @@ import '../stylesheets/Profile.css';
 class Profile extends React.Component {
 	public render() {
 		return (
-			<div className="profile container">
+			<div id="profile" className="container">
+				<div className="row header"><h2>Profile</h2></div>
 				<div className="row">
-					<div className="col-sm-6 profile-history">
-						<h3><i className="fas fa-history counter-spin" /> History <i className="fas fa-history counter-spin" /></h3>
-						<p>
-							I come from <strong>Ho Chi Minh, Vietnam</strong>, a beautiful country with lots of delicious food <i className="fas fa-utensils" />.
-							I earned my first <i className="fas fa-flask" /> degree in <strong>Physics, Statistics and Chemistry</strong> from the <a href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto <i className="fas fa-external-link-alt" /></a>.
-							After that, I completed a 1-year master's degree in <strong>Bioinformatics</strong> from the <a href="https://www.uoguelph.ca" target="_blank" rel="noopener noreferrer">University of Guelph <i className="fas fa-external-link-alt" /></a>, with a project in cancer genomic and proteomic statistical analyses.
-							During this period, I focused on expanding my <strong>machine learning</strong> theoretical knowledge and practical skill sets, mostly in <strong>Python</strong> and <strong>R</strong>.
-						</p>
+					<div className="col-sm-4 technical-skills">
+						<h4>Technical Skills</h4>
+
+						<div className="icons-sect">
+
+							<i className="devicon-react-original-wordmark" />
+							<i className="devicon-typescript-plain" />
+							<i className="devicon-javascript-plain" />
+							<i className="devicon-html5-plain-wordmark" />
+							<i className="devicon-css3-plain-wordmark" />
+							<i className="devicon-bootstrap-plain-wordmark" />
+
+							<i className="devicon-java-plain-wordmark" />
+							<i className="devicon-c-plain-wordmark" />
+							<i className="devicon-cplusplus-plain-wordmark" />
+							<i className="devicon-python-plain-wordmark" />
+
+							<i className="devicon-git-plain-wordmark" />
+
+						</div>
+
 					</div>
 
-					<div className="col-sm-6 profile-current">
-						<h3><i className="fas fa-sync-alt fa-spin" /> Current <i className="fas fa-sync-alt fa-spin" /></h3>
+					<div className="col-sm-8 profile-text">
 						<p>
-							I am pursuing a second bachelor's degree in <strong>Computer Science</strong> at the University of British Columbia, with 3rd-year standing.
-							I love visualising and analysing all kinds of <strong>data</strong> <i className="fas fa-chart-pie" /> <i className="fas fa-chart-line" /> <i className="fas fa-chart-bar" /> <i className="fas fa-chart-area" />; thus I usually describe myself as a <strong>data-driven</strong> person.
-							I am open to opportunities as a software/web developer.
+							I am originally from the beautiful Ho Chi Minh city in Vietnam but I earned a <strong>degree in Physics, Statistics and Chemistry</strong> from the <a href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto</a>.
+						</p>
+						<p>
+							Afterwards, I earned a <strong>Master's degree in Bioinformatics</strong> from the <a href="https://www.uoguelph.ca" target="_blank" rel="noopener noreferrer">University of Guelph</a>, with a project in cancer genomic and proteomic statistical analyses.
+							During this period, I focused on expanding my theoretical knowledge in machine learning, and my practical skill sets in Python and R.
+						</p>
+						<p>
+							Currently, I am a third year student pursuing a second bachelor's degree in <strong>Computer Science</strong> at the <a href="https://www.ubc.ca" target="_blank" rel="noopener noreferrer">University of British Columbia</a>.
+						</p>
+						<p>
+							I love visualising and analysing all kinds of data <i className="fas fa-chart-pie" /> <i className="fas fa-chart-line" /> <i className="fas fa-chart-bar" /> <i className="fas fa-chart-area" />.
+							I am open to working as a software/web developer.
 							<br /><strong>Interested?</strong> <a href="mailto:bangchi.duong.20193@outlook.com?Subject=Hello%20there!" target="_top">Let me know <i className="far fa-paper-plane" /></a>.
 						</p>
 					</div>

@@ -1,40 +1,43 @@
 import * as React from 'react';
 import homeImg from '../images/homeImg.jpg';
-import typescriptIcon from '../images/typescript.svg';
 import '../stylesheets/Home.css';
-import GoogleMapContainer from './GoogleMapContainer';
+// import GoogleMapContainer from './GoogleMapContainer';
 
 class Home extends React.Component {
 	public render() {
 		return (
-			<div className="home container">
+			<div id="home" className="container">
 				<div className="row">
 
-					<div className="col-sm-6 text-center">
-						<h4><strong>HI, I'M BANG CHI DUONG!</strong></h4>
+					<div className="col-md-4 img-sect d-none d-md-block"><img src={homeImg} className="home-img img-fluid" alt="HomeImage" /></div>
+
+					<div className="col-md-8 text-center">
+						<h1>Hi, I'm Bang Chi Duong!</h1>
+						<hr />
 						<p>
-							I am an aspiring <strong>full-stack web developer</strong> and <strong>data scientist</strong>.
-							Currently I am living in Vancouver Canada.
-							This personal website is created with ❤️ using <strong>ReactJS</strong><i className="fab fa-react" />, <strong>TypeScript</strong><img src={typescriptIcon} className="typescript-icon" alt="TypeScriptIcon" />, <strong>HTML</strong><i className="fab fa-html5" />, custom <strong>CSS</strong><i className="fab fa-css3-alt" />, and <strong>Bootstrap</strong>.
+							I'm an aspiring <strong>full-stack web developer</strong> and <strong>data scientist</strong> based in Vancouver.
 						</p>
 
-						<div className="col-sm-12"><GoogleMapContainer /></div>
+						{/* <div className="col-sm-12"><GoogleMapContainer /></div> */}
 
-						<br />
-						<p><strong>Connect with me on social media:</strong></p>
-						<a href="https://www.linkedin.com/in/bang-chi-duong-6857969a/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin social-icons" aria-hidden="true" /></a>
+						<h6>Connect with me</h6>
+
+						<div className="social-icons-sect">
 						<a href="https://github.com/duongch4" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square social-icons" aria-hidden="true" /></a>
 						<a href="mailto:bangchi.duong.20193@outlook.com?Subject=Hello%20there!" target="_top"><i className="fas fa-envelope-square social-icons" aria-hidden="true" /></a>
+						<a href="https://www.linkedin.com/in/bang-chi-duong-6857969a/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin social-icons" aria-hidden="true" /></a>
+						</div>
 
-						<br />
+						<div>
 						<a href="https://1drv.ms/b/s!AlPEhSAAUWCmg-1M4fVovD2or56YPQ" target="_blank" rel="noopener noreferrer">
 							<button className="resume-button">
 								Resume <i className="far fa-file-pdf pdf-icon" aria-hidden="true" />
 							</button>
 						</a>
+						</div>
 					</div>
 
-					<div className="col-sm-6 img-sect"><img src={homeImg} className="home-img img-fluid d-none d-sm-block" alt="HomeImage" /></div>
+
 
 				</div>
 			</div>
