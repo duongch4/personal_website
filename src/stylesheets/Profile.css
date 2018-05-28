@@ -27,6 +27,10 @@
   text-align: left;
 }
 
+#profile .fa-linkedin{
+  font-size: 3em;
+}
+
 /* .profile-history .counter-spin {
     -webkit-animation: spin-counter 2s infinite linear;
     -moz-animation: spin-counter 2s infinite linear;
