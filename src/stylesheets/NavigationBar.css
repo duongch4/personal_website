@@ -1,7 +1,5 @@
 
 .navbar {
-    font-family: 'Roboto';
-    font-weight: 500;
     text-transform: uppercase;
 
     padding-top: 0;
@@ -13,10 +11,17 @@
 
 .navbar-brand {
     font-size: 2em;
+    font-family: "Roboto";
+    font-weight: 900;
 }
 
 .navbar .navbar-brand:hover {
     color: aqua;
+}
+
+.navbar .nav-link {
+    font-family: "Roboto";
+    font-weight: 500;
 }
 
 .navbar .navbar-nav li a:hover {
