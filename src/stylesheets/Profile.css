@@ -1,6 +1,6 @@
 #profile {
   background-color: whitesmoke;
-  padding: 2em;   
+  padding: var(--padding-section);
 }
 
 #profile .technical-skills {

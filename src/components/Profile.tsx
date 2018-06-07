@@ -18,7 +18,7 @@ import '../stylesheets/Profile.css';
 class Profile extends React.Component {
 	public render() {
 		return (
-			<div id="profile" className="container">
+			<div id="profile" className="container-fluid">
 				<div className="row header"><h2>Profile</h2></div>
 				<div className="row">
 					<div className="col-sm-4 technical-skills">

@@ -4,7 +4,7 @@ import '../stylesheets/NavigationBar.css';
 class NavigationBar extends React.Component {
 	public render() {
 		return (
-			<div id="navigation" className="container">
+			<div id="navigation">
 				<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 					<a className="navbar-brand" href="#home">BCD<span className="sr-only">(current)</span></a>
 

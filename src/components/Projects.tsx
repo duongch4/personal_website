@@ -9,7 +9,7 @@ import '../stylesheets/Projects.css';
 class Projects extends React.Component {
     public render() {
         return (
-            <div id="projects" className="container">
+            <div id="projects" className="container-fluid">
                 <div className="row header"><h2>Projects</h2></div>
                 <div className="row">
                     <div className="col-lg-4 mb-4">   

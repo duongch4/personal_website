@@ -1,6 +1,6 @@
 #projects {
     background-color: white;
-    padding: 2em;
+    padding: var(--padding-section);
 }
 
 .item {

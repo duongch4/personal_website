@@ -6,7 +6,7 @@ import '../stylesheets/Contact.css';
 class Contact extends React.Component {
 	public render() {
 		return (
-			<div id="contact" className="container">
+			<div id="contact" className="container-fluid">
 
 				<div className="row header"><h2>Contact</h2></div>
 
