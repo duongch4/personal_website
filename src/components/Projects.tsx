@@ -1,6 +1,9 @@
 import * as React from 'react';
 
 import bioinformatics from '../images/bioinformatics.png';
+import busMap from '../images/busMap.png';
+import imageCompression from '../images/imageCompression.png';
+import mazePath from '../images/mazePath.png';
 import multipleClassifiers from '../images/multipleClassifiers.png';
 import objectDetection from '../images/objectDetection.jpg';
 
@@ -50,6 +53,48 @@ class Projects extends React.Component {
                             </div>
                         </div>
                         <h5><strong>Bioinformatics</strong> <i className="fas fa-dna" /></h5>
+                    </div>
+                </div>
+                
+                <div className="row">
+                    <div className="col-lg-4 mb-4">   
+                        <div className="item col-md-12">
+                            <img src={imageCompression} className="thumb-img" alt="LossyImageCompressionImage" />
+                            <div className="overlay">
+                                <div className="text">
+                                    <p><strong>Compress images</strong></p>
+                                    <p>C++</p>
+                                    <p><a href="https://github.com/duongch4/cs221-pa3" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><strong>Lossy Image Compression</strong> <i className="far fa-image" /></h5>
+                    </div>
+                    <div className="col-lg-4 mb-4">
+                        <div className="item col-md-12">
+                            <img src={mazePath} className="thumb-img" alt="MazePathImage" />
+                            <div className="overlay">
+                                <div className="text">
+                                    <p><strong>Find shortest path</strong></p>
+                                    <p>C++</p>
+                                    <p><a href="https://github.com/duongch4/cs221-pa4" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><strong>Shortest Path</strong> <i className="fas fa-search" /></h5>
+                    </div>
+                    <div className="col-lg-4 mb-4">
+                        <div className="item col-md-12">
+                            <img src={busMap} className="thumb-img" alt="BusMapImage" />
+                            <div className="overlay">
+                                <div className="text">
+                                    <p><strong>Implement features bus-map</strong></p>
+                                    <p>JAVA, Android</p>
+                                    <p><a href="https://github.com/duongch4/bus-map-phase1" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><strong>Bus Map Android</strong> <i className="fas fa-bus" /></h5>
                     </div>
                 </div>
             </div>
