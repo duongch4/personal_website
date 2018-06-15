@@ -68,7 +68,7 @@ class Projects extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <h5><strong>Lossy Image Compression</strong> <i className="far fa-image" /></h5>
+                        <h5><strong>Lossy Image Compression</strong> <i className="far fa-image fa-lg" /></h5>
                     </div>
                     <div className="col-lg-4 mb-4">
                         <div className="item col-md-12">

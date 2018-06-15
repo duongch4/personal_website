@@ -21,7 +21,10 @@
 .item:hover .thumb-img {
     width: 100%;
     height: 100%;
-    -webkit-filter: blur(5px); /* Safari */
+    -webkit-filter: blur(5px); /*Safari*/
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
     filter: blur(5px);
 }
 
