@@ -12,7 +12,7 @@ class Footer extends React.Component {
 				</div>
 				
 				<div className="navbar-text">
-					Bang Chi Duong © 2018. All Right Reserved
+					Bang Chi Duong © {new Date().getFullYear()}. All Right Reserved
 				</div>
 			</nav>
 		);
