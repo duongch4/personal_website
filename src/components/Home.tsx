@@ -29,7 +29,7 @@ class Home extends React.Component {
 						</div>
 
 						<div>
-						<a href="" target="_blank" rel="noopener noreferrer">
+						<a href="https://1drv.ms/b/s!AlPEhSAAUWCmhdglUEuu_XTvQxlrAw" target="_blank" rel="noopener noreferrer">
 							<button className="resume-button">
 								Resume <i className="far fa-file-pdf pdf-icon" aria-hidden="true" />
 							</button>
