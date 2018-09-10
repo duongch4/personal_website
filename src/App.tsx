@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
-// import Home from './components/Home';
+import Home from './components/Home';
 import NavigationBar from './components/NavigationBar';
 import Profile from './components/Profile';
 import Projects from './components/Projects';
@@ -16,10 +16,10 @@ class App extends React.Component {
 
 				<NavigationBar />
 
-				{/* <Home /> */}
+				<Home />
 				<Profile />
 				<Projects />
-				{/* <Contact /> */}
+				<Contact />
 
 				<Footer />
 
