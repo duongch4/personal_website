@@ -20,7 +20,7 @@ class Contact extends React.Component {
 
 						<hr />
 
-						<p><a href="https://1drv.ms/b/s!AlPEhSAAUWCmhdglUEuu_XTvQxlrAw" target="_blank" rel="noopener noreferrer">
+						<p><a href="https://1drv.ms/b/s!AlPEhSAAUWCmhd5w_4H_4obK1i2DNQ" target="_blank" rel="noopener noreferrer">
 							<button type="button" className="btn btn-light">Resume <i className="fas fa-file-pdf pdf-icon" aria-hidden="true" /></button>
 						</a></p>
 
