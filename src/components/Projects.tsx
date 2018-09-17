@@ -65,7 +65,7 @@ class Projects extends React.Component {
                                 <div className="text">
                                     <p><strong>Compress images</strong></p>
                                     <p>C++</p>
-                                    <p><a href="https://github.com/duongch4/cs221-pa3/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
+                                    <p><a href="https://github.com/duongch4/lossy-image-compression/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@ class Projects extends React.Component {
                                 <div className="text">
                                     <p><strong>Find shortest path</strong></p>
                                     <p>C++</p>
-                                    <p><a href="https://github.com/duongch4/cs221-pa4/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
+                                    <p><a href="https://github.com/duongch4/shortest-path-bfs/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
                                 </div>
                             </div>
                         </div>
