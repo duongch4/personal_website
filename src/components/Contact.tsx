@@ -1,9 +1,8 @@
-import * as React from 'react';
+import * as React from "react";
+import * as contactImg from "../assets/png/contactImg.png";
+import * as resume from "../assets/pdf/resume.pdf";
 
-import contactImg from '../images/contactImg.png';
-import '../stylesheets/Contact.css';
-
-class Contact extends React.Component {
+export class Contact extends React.Component<any, any> {
 	public render() {
 		return (
 			<div id="contact" className="container-fluid">
@@ -20,7 +19,7 @@ class Contact extends React.Component {
 
 						<hr />
 
-						<p><a href="https://1drv.ms/b/s!AlPEhSAAUWCmhd5wSLA_HvivQNhaxw/" target="_blank" rel="noopener noreferrer">
+						<p><a href={resume} target="_blank" rel="noopener noreferrer">
 							<button type="button" className="btn btn-light">Resume <i className="fas fa-file-pdf pdf-icon" aria-hidden="true" /></button>
 						</a></p>
 
@@ -34,5 +33,3 @@ class Contact extends React.Component {
 		);
 	}
 }
-
-export default Contact;

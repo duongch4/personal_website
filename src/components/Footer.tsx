@@ -1,7 +1,6 @@
-import * as React from 'react';
-import '../stylesheets/Footer.css';
+import * as React from "react";
 
-class Footer extends React.Component {
+export class Footer extends React.Component<any, any> {
 	public render() {
 		return (
 			<nav className="footer navbar-dark bg-dark static-bottom text-center">
@@ -18,5 +17,3 @@ class Footer extends React.Component {
 		);
 	}
 }
-
-export default Footer;

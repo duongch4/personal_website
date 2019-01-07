@@ -1,9 +1,8 @@
-import * as React from 'react';
-import homeImg from '../images/homeImg.jpg';
-import '../stylesheets/Home.css';
-// import GoogleMapContainer from './GoogleMapContainer';
+import * as React from "react";
+import * as homeImg from "../assets/jpg/homeImg.jpg";
+import * as resume from "../assets/pdf/resume.pdf";
 
-class Home extends React.Component {
+export class Home extends React.Component<any, any> {
 	public render() {
 		return (
 			<div id="home" className="container-fluid">
@@ -29,7 +28,7 @@ class Home extends React.Component {
 						</div>
 
 						<div>
-						<a href="https://1drv.ms/b/s!AlPEhSAAUWCmhd5wSLA_HvivQNhaxw/" target="_blank" rel="noopener noreferrer">
+						<a href={resume} target="_blank" rel="noopener noreferrer">
 							<button className="resume-button">
 								Resume <i className="far fa-file-pdf pdf-icon" aria-hidden="true" />
 							</button>
@@ -44,7 +43,3 @@ class Home extends React.Component {
 		);
 	}
 }
-
-export default Home;
-
-// <img src={profileImg} className="main-img col-sm-5 img-fluid rounded-circle d-none d-sm-block" alt="HomeImage" />

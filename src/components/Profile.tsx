@@ -1,21 +1,18 @@
-import * as React from 'react';
+import * as React from "react";
 
-import bootstrapImg from '../images/bootstrap-plain-wordmark.svg';
-import cImg from '../images/c-plain.svg';
-import cplusplusImg from '../images/cplusplus-plain.svg';
-import css3Img from '../images/css3-plain-wordmark.svg';
-import gitImg from '../images/git-plain-wordmark.svg';
-import html5Img from '../images/html5-plain-wordmark.svg';
-import javaImg from '../images/java-plain-wordmark.svg';
-import javascriptImg from '../images/javascript-plain.svg';
-import pythonImg from '../images/python-plain-wordmark.svg';
-import reactImg from '../images/react-original-wordmark.svg';
-import typescriptImg from '../images/typescript-plain.svg';
+import * as bootstrapImg from "../assets/svg/bootstrap-plain-wordmark.svg";
+import * as cImg from "../assets/svg/c-plain.svg";
+import * as cplusplusImg from "../assets/svg/cplusplus-plain.svg";
+import * as css3Img from "../assets/svg/css3-plain-wordmark.svg";
+import * as gitImg from "../assets/svg/git-plain-wordmark.svg";
+import * as html5Img from "../assets/svg/html5-plain-wordmark.svg";
+import * as javaImg from "../assets/svg/java-plain-wordmark.svg";
+import * as javascriptImg from "../assets/svg/javascript-plain.svg";
+import * as pythonImg from "../assets/svg/python-plain-wordmark.svg";
+import * as reactImg from "../assets/svg/react-original-wordmark.svg";
+import * as typescriptImg from "../assets/svg/typescript-plain.svg";
 
-import '../stylesheets/Profile.css';
-
-
-class Profile extends React.Component {
+export class Profile extends React.Component<any, any> {
 	public render() {
 		return (
 			<div id="profile" className="container-fluid">
@@ -85,5 +82,3 @@ class Profile extends React.Component {
 		);
 	}
 }
-
-export default Profile;

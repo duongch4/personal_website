@@ -1,7 +1,6 @@
-import * as React from 'react';
-import '../stylesheets/NavigationBar.css';
+import * as React from "react";
 
-class NavigationBar extends React.Component {
+export class NavigationBar extends React.Component {
 	public render() {
 		return (
 			<div id="navigation">
@@ -26,5 +25,3 @@ class NavigationBar extends React.Component {
 		);
 	}
 }
-
-export default NavigationBar;

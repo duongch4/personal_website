@@ -1,16 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 
-import bioinformatics from '../images/bioinformatics.png';
-// import busMap from '../images/busMap.png';
-import imageCompression from '../images/imageCompression.png';
-import mazePath from '../images/mazePath.png';
-import movieApp from '../images/movieApp.png';
-import multipleClassifiers from '../images/multipleClassifiers.png';
-import objectDetection from '../images/objectDetection.jpg';
+import * as bioinformatics from "../assets/png/bioinformatics.png";
+import * as imageCompression from "../assets/png/imageCompression.png";
+import * as mazePath from "../assets/png/mazePath.png";
+import * as movieApp from "../assets/png/movieApp.png";
+import * as multipleClassifiers from "../assets/png/multipleClassifiers.png";
+import * as objectDetection from "../assets/jpg/objectDetection.jpg";
 
-import '../stylesheets/Projects.css';
-
-class Projects extends React.Component {
+export class Projects extends React.Component<any, any> {
     public render() {
         return (
             <div id="projects" className="container-fluid">
@@ -116,5 +113,3 @@ class Projects extends React.Component {
         );
     }
 }
-
-export default Projects;
