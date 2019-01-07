@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as homeImg from "../assets/jpg/homeImg.jpg";
-import * as resume from "../assets/pdf/resume.pdf";
+import * as resume from "../assets/pdf/BangChiDuong_Resume.pdf";
 
 export class Home extends React.Component<any, any> {
 	public render() {

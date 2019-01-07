@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as contactImg from "../assets/png/contactImg.png";
-import * as resume from "../assets/pdf/resume.pdf";
+import * as resume from "../assets/pdf/BangChiDuong_Resume.pdf";
 
 export class Contact extends React.Component<any, any> {
 	public render() {
