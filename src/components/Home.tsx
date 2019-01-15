@@ -14,7 +14,7 @@ export class Home extends React.Component<any, any> {
 						<h1>Hi, I'm Bang Chi Duong!</h1>
 						<hr />
 						<p>
-							I'm an aspiring <strong>full-stack web developer</strong> and <strong>data scientist</strong> based in Vancouver.
+							I'm an aspiring <strong>machine learning scientist</strong> and <strong>web developer</strong> based in Vancouver.
 						</p>
 
 						{/* <div className="col-sm-12"><GoogleMapContainer /></div> */}
