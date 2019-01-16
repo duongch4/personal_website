@@ -60,14 +60,14 @@ export class Profile extends React.Component<any, any> {
 						</p>
 						<p>
 							Afterwards, I earned a <strong>Master's degree in Bioinformatics</strong> from the <a href="https://www.uoguelph.ca" target="_blank" rel="noopener noreferrer">University of Guelph</a>, with a project in cancer genomic and proteomic statistical analyses.
-							During this period, I focused on expanding my theoretical knowledge in machine learning, and my practical skill sets in Python and R.
 						</p>
 						<p>
-							Currently, I am a third year student pursuing a second bachelor's degree in <strong>Computer Science</strong> at the <a href="https://www.ubc.ca" target="_blank" rel="noopener noreferrer">University of British Columbia</a>.
+							Currently, I am a fourth year student pursuing a second bachelor's degree in <strong>Computer Science</strong> at the <a href="https://www.ubc.ca" target="_blank" rel="noopener noreferrer">University of British Columbia</a>.
 						</p>
 						<p>
 							I love visualising and analysing all kinds of data <i className="fas fa-chart-pie" /> <i className="fas fa-chart-line" /> <i className="fas fa-chart-bar" /> <i className="fas fa-chart-area" />.
-							I am open to working as a software/web developer.
+							I have ventured into different areas including physics simulation and cancer genomics, applying machine learning techniques to help resolve problems.
+							I am open to working as a software machine-learning/web developer.
 							<br /><strong>Interested?</strong> <a href="mailto:bangchi.duong.20193@outlook.com?Subject=Hello%20there!" target="_top">Let me know <i className="far fa-paper-plane" /></a>.
 						</p>
 					</div>
