@@ -8,108 +8,80 @@ import * as multipleClassifiers from "../assets/png/multipleClassifiers.png";
 import * as objectDetection from "../assets/jpg/objectDetection.jpg";
 
 export class Projects extends React.Component<any, any> {
+
     public render() {
         return (
             <div id="projects" className="container-fluid">
                 <div className="row header"><h2>Projects</h2></div>
-                <div className="row">
-                    <div className="col-lg-4 mb-4">
-                        <div className="item col-md-12">
-                            <img src={objectDetection} className="thumb-img" alt="ObjectDetectionImage" />
-                            <div className="overlay">
-                                <div className="text">
-                                    <p><strong>Detect cars within images</strong></p>
-                                    <p>Python, OpenCV, Scikit-learn</p>
-                                    <p><a href="https://github.com/duongch4/objectDetection/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5><strong>Object Detection</strong> <i className="fas fa-search" /></h5>
-                    </div>
-                    <div className="col-lg-4 mb-4">
-                        <div className="item col-md-12">
-                            <img src={multipleClassifiers} className="thumb-img" alt="MultipleClassifersImage" />
-                            <div className="overlay">
-                                <div className="text">
-                                    <p><strong>Classify benign/malignant cancer</strong></p>
-                                    <p>R, ggplot2</p>
-                                    <p><a href="https://github.com/duongch4/mammographic-classification/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5><strong>Multiple Classifiers</strong> <i className="fas fa-dna" /></h5>
-                    </div>
-                    <div className="col-lg-4 mb-4">
-                        <div className="item col-md-12">
-                            <img src={bioinformatics} className="thumb-img" alt="BioinformaticsImage" />
-                            <div className="overlay">
-                                <div className="text">
-                                    <p><strong>Analyse cancer genomics <br /> and proteomics </strong></p>
-                                    <p>R, edgeR, ggplot2, MSqRob, GSEA</p>
-                                    <p><a href="https://github.com/duongch4/genomics-proteomics-analysis/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5><strong>Bioinformatics</strong> <i className="fas fa-dna" /></h5>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-lg-4 mb-4">
-                        <div className="item col-md-12">
-                            <img src={imageCompression} className="thumb-img" alt="LossyImageCompressionImage" />
-                            <div className="overlay">
-                                <div className="text">
-                                    <p><strong>Compress images</strong></p>
-                                    <p>C++</p>
-                                    <p><a href="https://github.com/duongch4/lossy-image-compression/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5><strong>Lossy Image Compression</strong> <i className="far fa-image fa-lg" /></h5>
-                    </div>
-                    <div className="col-lg-4 mb-4">
-                        <div className="item col-md-12">
-                            <img src={mazePath} className="thumb-img" alt="MazePathImage" />
-                            <div className="overlay">
-                                <div className="text">
-                                    <p><strong>Find shortest path</strong></p>
-                                    <p>C++</p>
-                                    <p><a href="https://github.com/duongch4/shortest-path-bfs/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5><strong>Shortest Path</strong> <i className="fas fa-search" /></h5>
-                    </div>
-                    {/* <div className="col-lg-4 mb-4">
-                        <div className="item col-md-12">
-                            <img src={busMap} className="thumb-img" alt="BusMapImage" />
-                            <div className="overlay">
-                                <div className="text">
-                                    <p><strong>Implement features bus-map</strong></p>
-                                    <p>JAVA, Android</p>
-                                    <p><a href="https://github.com/duongch4/bus-map-phase1/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5><strong>Bus Map Android</strong> <i className="fas fa-bus" /></h5>
-                    </div> */}
-                    <div className="col-lg-4 mb-4">
-                        <div className="item col-md-12">
-                            <img src={movieApp} className="thumb-img" alt="MovieAppImage" />
-                            <div className="overlay">
-                                <div className="text">
-                                    <p><strong>Browse/Review Movies</strong></p>
-                                    <p><a href="https://cs490-project-movie.herokuapp.com/" target="blank" rel="noopener noreferer">Link</a></p>
-                                    <p>MongoDB, Express, React, NodeJS, Passport</p>
-                                    <p><a href="https://github.com/duongch4/mern-passport-dev/" target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <h5><strong>Moview Review Web App</strong> <i className="fas fa-film fa-lg" /></h5>
-                    </div>
-                </div>
+                {
+                    this.renderOneRow(
+                        this.renderProject(
+                            objectDetection, "ObjectDetectionImage", "Object Detection",
+                            "Detect cars within images", "Python, OpenCV, Scikit-learnPython",
+                            "https://github.com/duongch4/objectDetection/", "fas fa-search", null
+                        ),
+                        this.renderProject(
+                            multipleClassifiers, "MultipleClassifersImage", "Multiple Classifiers",
+                            "Classify benign/malignant cancer", "R, ggplot2",
+                            "https://github.com/duongch4/mammographic-classification/", "fas fa-dna", null
+                        ),
+                        this.renderProject(
+                            bioinformatics, "BioinformaticsImage", "Bioinformatics",
+                            "Analyse cancer genomics", "R, edgeR, ggplot2, MSqRob, GSEA",
+                            "https://github.com/duongch4/genomics-proteomics-analysis/", "fas fa-dna", null
+                        ),
+                    )
+                }
+                {
+                    this.renderOneRow(
+                        this.renderProject(
+                            imageCompression, "LossyImageCompressionImage", "Lossy Image Compression",
+                            "Compress images", "C++",
+                            "https://github.com/duongch4/lossy-image-compression/", "far fa-image fa-lg", null
+                        ),
+                        this.renderProject(
+                            mazePath, "MazePathImage", "Shortest Path",
+                            "Find shortest path", "C++",
+                            "https://github.com/duongch4/shortest-path-bfs/", "fas fa-search", null
+                        ),
+                        this.renderProject(
+                            movieApp, "MovieAppImage", "Shortest Path",
+                            "Browse/Review Movies", "MongoDB, Express, React, NodeJS, Passport",
+                            "https://github.com/duongch4/mern-passport-dev/", "fas fa-search",
+                            "https://cs490-project-movie.herokuapp.com/"
+                        )
+                    )
+                }
             </div>
         );
+    }
+
+    private renderProject = (
+        imgSrc: any, altSring: string, title: string, description: string,
+        languages: string, repoLink: string, icon: string, webAppLink: string
+    ): JSX.Element => {
+        return (
+            <div className="col-lg-4 mb-4">
+                <div className="item col-md-12">
+                    <img src={imgSrc} className="thumb-img" alt={altSring} />
+                    <div className="overlay">
+                        <div className="text">
+                            {
+                                webAppLink ?
+                                <p><strong><a href={webAppLink} target="blank" rel="noopener noreferer">{description}</a></strong></p> :
+                                <p><strong>{description}</strong></p>
+                            }
+                            <p>{languages}</p>
+                            <p><a href={repoLink} target="_blank" rel="noopener noreferrer">Repo <i className="fab fa-github" aria-hidden="true" /></a></p>
+                        </div>
+                    </div>
+                </div>
+                <h5><strong>{title}</strong> <i className={icon} /></h5>
+            </div>
+        );
+    }
+
+    private renderOneRow = (proj1: JSX.Element, proj2: JSX.Element, proj3: JSX.Element): JSX.Element => {
+        return (<div className="row">{proj1}{proj2}{proj3}</div>);
     }
 }
