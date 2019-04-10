@@ -45,7 +45,7 @@ export class Projects extends React.Component<any, any> {
                             "https://github.com/duongch4/shortest-path-bfs/", "fas fa-search", null
                         ),
                         this.renderProject(
-                            movieApp, "MovieAppImage", "Shortest Path",
+                            movieApp, "MovieAppImage", "Browse/Review Movies",
                             "Browse/Review Movies", "MongoDB, Express, React, NodeJS, Passport",
                             "https://github.com/duongch4/mern-passport-dev/", "fas fa-search",
                             "https://cs490-project-movie.herokuapp.com/"
