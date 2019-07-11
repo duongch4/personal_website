@@ -1,11 +1,12 @@
-// const webpack = require("webpack"); // access built-in plugins
+const webpack = require("webpack"); // access built-in plugins
 const glob = require("glob"); // sync all css files, no need to import css
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin"); // to minize js file
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // to build from html template
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // to extract css into it own file
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'); // to use with transpileOnly in ts-loader
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin"); // to use with transpileOnly in ts-loader
 
 let plugins = [
     new HtmlWebpackPlugin({
@@ -22,7 +23,7 @@ let plugins = [
             keepClosingSlash: true,
             minifyJS: true,
             minifyCSS: true,
-            minifyURLs: true,   
+            minifyURLs: true,
         }
     }),
     new MiniCssExtractPlugin({
@@ -30,6 +31,10 @@ let plugins = [
         chunkfilename: "[id].[hash].css"
     }),
     new ImageminPlugin({}),
+    new MomentLocalesPlugin({
+        localesToKeep: ["en", "en-ca"],
+    }),
+    new webpack.HashedModuleIdsPlugin(), // so that file hashes dont change unexpectedly
     new ForkTsCheckerWebpackPlugin({
         async: false,
         useTypescriptIncrementalApi: true,
@@ -39,13 +44,16 @@ let plugins = [
 
 module.exports = {
     mode: "production",
-    entry: ["./src/index.tsx"].concat(glob.sync("./src/**/*.scss")),
+    entry: {
+        main: ["./src/index.tsx"].concat(glob.sync("./src/**/*.scss")),
+        pageIntro: "./src/pages/intro/IntroPage.tsx"
+    },
     output: {
-        filename: "[name].[contenthash].js",
+        filename: "[name].[contenthash:8].js",
         path: `${__dirname}/dist`
     },
-    
-    devtool: "source-map",
+
+    // devtool: "source-map",
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"]
     },
@@ -71,7 +79,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpg|gif|pdf|svg)$/,
+                test: /\.(jpe?g|png|gif|svg|pdf)$/,
                 use: [
                     {
                         loader: "file-loader",
@@ -83,12 +91,17 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                loader: "image-webpack-loader",
+                enforce: "pre"
+            },
+            {
                 test: /\.tsx?$/,
                 use: [
                     {
                         loader: "ts-loader",
-                        options: { 
-                            transpileOnly: true 
+                        options: {
+                            transpileOnly: true
                         }
                     }
                 ]
@@ -109,8 +122,31 @@ module.exports = {
                 sourceMap: true
             }),
             new OptimizeCSSAssetsPlugin({})
-        ]
+        ],
+        runtimeChunk: "single",
+        splitChunks: {
+            chunks: "all",
+            maxInitialRequests: Infinity,
+            minSize: 0,
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name(module) {
+                        // get the name. E.g. node_modules/packageName/not/this/part.js
+                        // or node_modules/packageName
+                        const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+                        // npm package names are URL-safe, but some servers don"t like @ symbols
+                        return `npm.${packageName.replace("@", "")}`;
+                    },
+                },
+            },
+        },
     },
 
-    plugins: plugins
+    plugins: plugins,
+
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
+    }
 };

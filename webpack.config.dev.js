@@ -4,7 +4,8 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin"); // to minize js file
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // to build from html template
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // to extract css into it own file
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack-plugin").default
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'); // to use with transpileOnly in ts-loader
 const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 
@@ -18,13 +19,16 @@ let plugins = [
         chunkfilename: "[id].css"
     }),
     new ImageminPlugin({}),
+    new MomentLocalesPlugin({
+        localesToKeep: ["en", "en-ca"],
+    }),
     new ForkTsCheckerWebpackPlugin({
-        tslint: true, 
+        tslint: true,
         useTypescriptIncrementalApi: true
     }),
-    new ForkTsCheckerNotifierWebpackPlugin({ 
-        title: 'TypeScript', 
-        excludeWarnings: false 
+    new ForkTsCheckerNotifierWebpackPlugin({
+        title: 'TypeScript',
+        excludeWarnings: false
     }),
 ];
 
@@ -35,7 +39,7 @@ module.exports = {
         filename: "[name].js",
         path: `${__dirname}/dist`
     },
-    
+
     devServer: {
         clientLogLevel: "warning",
         open: true,
@@ -81,12 +85,17 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                loader: "image-webpack-loader",
+                enforce: "pre"
+            },
+            {
                 test: /\.tsx?$/,
                 use: [
                     {
                         loader: "ts-loader",
-                        options: { 
-                            transpileOnly: true 
+                        options: {
+                            transpileOnly: true
                         }
                     }
                 ]
@@ -110,5 +119,10 @@ module.exports = {
         ]
     },
 
-    plugins: plugins
+    plugins: plugins,
+
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
+    }
 };
