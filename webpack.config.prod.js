@@ -31,6 +31,7 @@ let plugins = [
         chunkfilename: "[id].[hash].css"
     }),
     new ImageminPlugin({}),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new MomentLocalesPlugin({
         localesToKeep: ["en", "en-ca"],
     }),

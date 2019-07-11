@@ -1,4 +1,4 @@
-// const webpack = require("webpack"); // access built-in plugins
+const webpack = require("webpack"); // access built-in plugins
 const glob = require("glob"); // sync all css files, no need to import css
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin"); // to minize js file
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // to build from html template
@@ -19,6 +19,7 @@ let plugins = [
         chunkfilename: "[id].css"
     }),
     new ImageminPlugin({}),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new MomentLocalesPlugin({
         localesToKeep: ["en", "en-ca"],
     }),
