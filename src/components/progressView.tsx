@@ -1,15 +1,15 @@
 import * as React from "react";
 import { ProgressBar } from "./progressBar";
 
-interface ProgressViewState {
+type ProgressViewState = {
     isFailed: boolean;
     isLoading: boolean;
-}
+};
 
-interface ProgressViewProps {
+type ProgressViewProps = {
     promise: Promise<any>;
     content?: () => any;
-}
+};
 
 export class ProgressView extends React.Component<ProgressViewProps, ProgressViewState> {
 
