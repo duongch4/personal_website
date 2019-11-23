@@ -6,7 +6,7 @@ import * as deepCloth from "../assets/png/deepCloth.png";
 import * as movieApp from "../assets/png/movieApp.png";
 import * as multipleClassifiers from "../assets/png/multipleClassifiers.png";
 import * as objectDetection from "../assets/jpg/objectDetection.jpg";
-import * as game from "../assets/png/CaptureTheCastle_splash_page_square.png";
+import * as game from "../assets/png/CaptureTheCastle.png";
 
 import * as deepClothPdf from "../assets/pdf/DeepClothSCA.pdf";
 import * as deepClothVid from "../assets/mp4/DeepClothSCA.mp4";
