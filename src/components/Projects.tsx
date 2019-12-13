@@ -11,7 +11,7 @@ import * as game from "../assets/png/CaptureTheCastle.png";
 import * as deepClothPdf from "../assets/pdf/DeepClothSCA.pdf";
 import * as deepClothVid from "../assets/mp4/DeepClothSCA.mp4";
 
-import * as gameExe from "../assets/7z/Capture_the_Castle_x64_Release.7z";
+import * as gameExe from "../assets/7z/Capture-The-Castle-x64-Release.7z";
 
 export class Projects extends React.Component<any, any> {
 
