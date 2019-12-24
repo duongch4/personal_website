@@ -88,9 +88,17 @@ export class Projects extends React.Component<any, any> {
                         undefined
                 }
                 {
-                    links.zip ?
-                        <p><a href={links.zip.link} target="_blank" rel="noopener noreferrer">
-                            {links.zip.id} <i className="fas fa-file-archive" aria-hidden="true" />
+                    links.zip_x64 ?
+                        <p><a href={links.zip_x64.link} target="_blank" rel="noopener noreferrer">
+                            {links.zip_x64.id} <i className="fas fa-file-archive" aria-hidden="true" />
+                        </a></p>
+                        :
+                        undefined
+                }
+                {
+                    links.zip_x86 ?
+                        <p><a href={links.zip_x86.link} target="_blank" rel="noopener noreferrer">
+                            {links.zip_x86.id} <i className="fas fa-file-archive" aria-hidden="true" />
                         </a></p>
                         :
                         undefined

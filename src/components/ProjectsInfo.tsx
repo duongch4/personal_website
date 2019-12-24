@@ -9,7 +9,8 @@ import * as gameImg from "../assets/png/CaptureTheCastle.png";
 import * as deepClothPdf from "../assets/pdf/DeepClothSCA.pdf";
 import * as deepClothVid from "../assets/mp4/DeepClothSCA.mp4";
 
-import * as gameExeZip from "../assets/7z/CaptureTheCastle-x64-Release.7z";
+import * as gameZip_x64 from "../assets/7z/CaptureTheCastle-v1-x64.7z";
+import * as gameZip_x86 from "../assets/7z/CaptureTheCastle-v1-x86.7z";
 import * as gameVideo from "../assets/mp4/CaptureTheCastle.mp4";
 
 export type LinkName = {
@@ -22,7 +23,8 @@ export type ProjectLinks = {
     repo?: LinkName,
     pdf?: LinkName,
     video?: LinkName,
-    zip?: LinkName
+    zip_x64?: LinkName,
+    zip_x86?: LinkName
 };
 
 export type ProjectInfo = {
@@ -48,7 +50,8 @@ export const projectsInfo: ProjectsInfo = {
         languages: ["C++, OpenGL"],
         icon: "fas fa-gamepad",
         links: {
-            zip: { id: "Executable Zip", link: gameExeZip },
+            zip_x64: { id: "Executable Zip (x64)", link: gameZip_x64 },
+            zip_x86: { id: "Executable Zip (x86)", link: gameZip_x86 },
             video: { id: "Gameplay", link: gameVideo }
         }
     },
