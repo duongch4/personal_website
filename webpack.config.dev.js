@@ -12,7 +12,9 @@ const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-web
 let plugins = [
     new HtmlWebpackPlugin({
         inject: true,
-        template: "./src/index.html"
+        template: "./src/index.html",
+        favicon: "./src/assets/png/titleImg.png",
+        title: "Chi Duong"
     }),
     new MiniCssExtractPlugin({
         filename: "[name].css",

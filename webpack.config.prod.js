@@ -11,6 +11,8 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin"); //
 let plugins = [
     new HtmlWebpackPlugin({
         template: "./src/index.html",
+        favicon: "./src/assets/png/titleImg.png",
+        title: "Chi Duong",
         hash: true,
         inject: true,
         minify: {
