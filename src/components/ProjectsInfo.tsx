@@ -39,7 +39,7 @@ export type ProjectInfo = {
 
 export type ProjectsInfo = {
     [id: string]: ProjectInfo
-}
+};
 
 export const projectsInfo: ProjectsInfo = {
     game: {
