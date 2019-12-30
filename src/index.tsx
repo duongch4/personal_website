@@ -1,5 +1,6 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
+
 import {
     BrowserRouter as Router,
     Route,
@@ -7,17 +8,44 @@ import {
     withRouter,
 } from "react-router-dom";
 
-// import { ScrollToTop } from "./components/scrollToTop";
-import { MainRoutes } from "./pages/mainRoutes";
+import { ScrollToTop } from "./components/utils/ScrollToTop";
+import { MainRoutes } from "./pages/MainRoutes";
 
-ReactDOM.render(
+const rootElem = document.getElementById("root");
+let render = () => {
+    ReactDOM.render(
         <Router>
-            {/* <ScrollToTop> */}
-            <Switch>
-                <Route path="/" component={MainRoutes} />
-            </Switch>
-            {/* </ScrollToTop> */}
+            <ScrollToTop>
+                <Switch>
+                    <Route path={"/"} component={MainRoutes} />
+                </Switch>
+            </ScrollToTop>
         </Router>
-    ,
-    document.getElementById("root"),
-);
+        ,
+        rootElem
+    );
+}
+
+if (module.hot) {
+    const renderApp = render;
+    const renderErr = (err: Error) => {
+        const RedBox = require("redbox-react").default;
+        ReactDOM.render(
+            <RedBox error={err} />,
+            rootElem
+        )
+    }
+    render = () => {
+        try {
+            renderApp();
+        }
+        catch(error) {
+            console.error(error);
+            renderErr(error);
+        }
+    };
+
+    module.hot.accept("./pages/MainRoutes", () => render());
+}
+
+render();

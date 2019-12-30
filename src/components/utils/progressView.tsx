@@ -1,5 +1,5 @@
-import * as React from "react";
-import { ProgressBar } from "./progressBar";
+import React, { Component } from "react";
+import { ProgressBar } from "./ProgressBar";
 
 type ProgressViewState = {
     isFailed: boolean;
@@ -8,10 +8,10 @@ type ProgressViewState = {
 
 type ProgressViewProps = {
     promise: Promise<any>;
-    content?: () => any;
+    content: () => any;
 };
 
-export class ProgressView extends React.Component<ProgressViewProps, ProgressViewState> {
+export class ProgressView extends Component<ProgressViewProps, ProgressViewState> {
 
     constructor(props: ProgressViewProps) {
         super(props);
@@ -21,19 +21,19 @@ export class ProgressView extends React.Component<ProgressViewProps, ProgressVie
         };
     }
 
-    public componentDidMount() {
+    componentDidMount() {
         if (this.props.promise) {
             this.asignToPromise(this.props);
         }
     }
 
-    public componentWillReceiveProps(newProps: ProgressViewProps) {
+    componentWillReceiveProps(newProps: ProgressViewProps) {
         if (newProps.promise !== this.props.promise) {
             this.asignToPromise(newProps);
         }
     }
 
-    public async asignToPromise(newProps: ProgressViewProps): Promise<void> {
+    async asignToPromise(newProps: ProgressViewProps): Promise<void> {
         if (newProps.promise !== null) {
             try {
                 await newProps.promise;
@@ -50,9 +50,9 @@ export class ProgressView extends React.Component<ProgressViewProps, ProgressVie
         }
     }
 
-    public render() {
+    render() {
         if (this.state.isFailed) {
-            return <div/>;
+            return <div />;
         }
 
         if (this.state.isLoading) {

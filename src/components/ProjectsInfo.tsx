@@ -9,36 +9,36 @@ import * as gameImg from "../assets/png/CaptureTheCastle.png";
 import * as deepClothPdf from "../assets/pdf/DeepClothSCA.pdf";
 import * as deepClothVid from "../assets/mp4/DeepClothSCA.mp4";
 
-import * as gameZip_x64 from "../assets/7z/CaptureTheCastle-v1-x64.7z";
-import * as gameZip_x86 from "../assets/7z/CaptureTheCastle-v1-x86.7z";
+import * as gameZipX64 from "../assets/7z/CaptureTheCastle-v1-x64.7z";
+import * as gameZipX86 from "../assets/7z/CaptureTheCastle-v1-x86.7z";
 import * as gameVideo from "../assets/mp4/CaptureTheCastle.mp4";
 
 export type LinkName = {
-    id: string,
-    link: string
+    id: string;
+    link: string;
 };
 
 export type ProjectLinks = {
-    description?: string,
-    repo?: LinkName,
-    pdf?: LinkName,
-    video?: LinkName,
-    zip_x64?: LinkName,
-    zip_x86?: LinkName
+    description?: string;
+    repo?: LinkName;
+    pdf?: LinkName;
+    video?: LinkName;
+    zipX64?: LinkName;
+    zipX86?: LinkName;
 };
 
 export type ProjectInfo = {
-    image: string,
-    altStr: string,
-    title: string,
-    description: string[],
-    languages: string[],
-    icon: string,
-    links: ProjectLinks
+    image: string;
+    altStr: string;
+    title: string;
+    description: string[];
+    languages: string[];
+    icon: string;
+    links: ProjectLinks;
 };
 
 export type ProjectsInfo = {
-    [id: string]: ProjectInfo
+    [id: string]: ProjectInfo;
 };
 
 export const projectsInfo: ProjectsInfo = {
@@ -50,8 +50,8 @@ export const projectsInfo: ProjectsInfo = {
         languages: ["C++, OpenGL"],
         icon: "fas fa-gamepad",
         links: {
-            zip_x64: { id: "Executable Zip (x64)", link: gameZip_x64 },
-            zip_x86: { id: "Executable Zip (x86)", link: gameZip_x86 },
+            zipX64: { id: "Executable Zip (x64)", link: gameZipX64 },
+            zipX86: { id: "Executable Zip (x86)", link: gameZipX86 },
             video: { id: "Gameplay", link: gameVideo }
         }
     },
