@@ -1,21 +1,41 @@
 {
     "compilerOptions": {
         "outDir": "./dist",
+        "declarationDir": "./dist/types",
+        "declaration": true,
+
+        "allowJs": false,
+        "checkJs": false,
+
+        "strict": true,
         "sourceMap": true,
-        "noImplicitAny": false,
+
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedParameters": true,
+        "esModuleInterop": true,
+        // "noUnusedLocals": true,
+        "noImplicitAny": true,
+
         "module": "commonjs",
-        "target": "es5",
+        "target": "esnext",
         "jsx": "react",
         "lib": [
             "dom",
-            "es7"
-        ]
+            "es7", "es6",
+            "esnext"
+        ],
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "node_modules/@types/*",
+                "src/types/staticAssests.d.ts",
+            ]
+        }
     },
     "include": [
         "./src/**/*"
-    ],
-    "typeRoots": [
-        "../node_modules/@types",
-        "../@types"
     ]
 }

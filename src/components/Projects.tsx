@@ -88,17 +88,17 @@ export class Projects extends React.Component<any, any> {
                         undefined
                 }
                 {
-                    links.zip_x64 ?
-                        <p><a href={links.zip_x64.link} target="_blank" rel="noopener noreferrer">
-                            {links.zip_x64.id} <i className="fas fa-file-archive" aria-hidden="true" />
+                    links.zipX64 ?
+                        <p><a href={links.zipX64.link} target="_blank" rel="noopener noreferrer">
+                            {links.zipX64.id} <i className="fas fa-file-archive" aria-hidden="true" />
                         </a></p>
                         :
                         undefined
                 }
                 {
-                    links.zip_x86 ?
-                        <p><a href={links.zip_x86.link} target="_blank" rel="noopener noreferrer">
-                            {links.zip_x86.id} <i className="fas fa-file-archive" aria-hidden="true" />
+                    links.zipX86 ?
+                        <p><a href={links.zipX86.link} target="_blank" rel="noopener noreferrer">
+                            {links.zipX86.id} <i className="fas fa-file-archive" aria-hidden="true" />
                         </a></p>
                         :
                         undefined
@@ -109,9 +109,9 @@ export class Projects extends React.Component<any, any> {
 
     private setSpanList = (spanList: string[]): React.ReactElement[] => {
         return (
-            spanList.map((value) => {
+            spanList.map((value, index) => {
                 return (
-                    <span className="span-desc"><strong>{value}</strong></span>
+                    <span className="span-desc" key={index}><strong>{value}</strong></span>
                 );
             })
         );
