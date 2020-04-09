@@ -44,7 +44,17 @@ export class Projects extends React.Component<any, any> {
                         </div>
                     </div>
                 </div>
-                <h5><strong>{project.title}</strong> <i className={project.icon} /></h5>
+                <h5>
+                    <span>
+                        <strong>{project.title}</strong>
+                        &nbsp;
+                        {
+                            project.icon.includes(".svg")
+                                ? <img src={project.icon} alt="Icon Image" />
+                                : <i className={project.icon} />
+                        }
+                    </span>
+                </h5>
             </div>
         );
     }

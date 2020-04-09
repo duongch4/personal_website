@@ -5,6 +5,8 @@ import * as movieAppImg from "../assets/png/movieApp.png";
 import * as multipleClassifiersImg from "../assets/png/multipleClassifiers.png";
 import * as objectDetectionImg from "../assets/jpg/objectDetection.jpg";
 import * as gameImg from "../assets/png/CaptureTheCastle.png";
+import * as disneyImg from "../assets/png/disney.png";
+import * as disneyIcon from "../assets/svg/mickey.svg";
 
 import * as deepClothPdf from "../assets/pdf/DeepClothSCA.pdf";
 import * as deepClothVid from "../assets/mp4/DeepClothSCA.mp4";
@@ -42,11 +44,23 @@ export type ProjectsInfo = {
 };
 
 export const projectsInfo: ProjectsInfo = {
+    disney: {
+        image: disneyImg,
+        altStr: "Disney Image",
+        title: "The Disney Story",
+        description: ["Disney Data Visualisation"],
+        languages: ["JavaScript, D3"],
+        icon: disneyIcon,
+        links: { 
+            repo: { id: "Repo", link: "https://github.com/duongch4/cs436-disney/"},
+            description: "https://duongch4.github.io/cs436-disney/"
+        }
+    },
     game: {
         image: gameImg,
         altStr: "Capture The Castle Image",
         title: "Capture The Castle",
-        description: ["2D Game"],
+        description: ["2D 2-Player Game"],
         languages: ["C++, OpenGL"],
         icon: "fas fa-gamepad",
         links: {
@@ -71,7 +85,7 @@ export const projectsInfo: ProjectsInfo = {
     movieApp: {
         image: movieAppImg,
         altStr: "Movie App Image",
-        title: "Browse/Review Movies",
+        title: "Movies Review App",
         description: ["Browse/Review Movies"],
         languages: ["MongoDB, Express", "React, NodeJS"],
         icon: "fas fa-search",
@@ -84,7 +98,7 @@ export const projectsInfo: ProjectsInfo = {
         image: objectDetectionImg,
         altStr: "Object Detection Image",
         title: "Object Detection",
-        description: ["Detect cars within images"],
+        description: ["Cars Detection Model"],
         languages: ["Python, OpenCV"],
         icon: "fas fa-search",
         links: { repo: { id: "Repo", link: "https://github.com/duongch4/objectDetection/" } }
@@ -93,7 +107,7 @@ export const projectsInfo: ProjectsInfo = {
         image: imageCompressionImg,
         altStr: "Lossy Image Compression Image",
         title: "Lossy Image Compression",
-        description: ["Compress images"],
+        description: ["Lossy Image Compressor"],
         languages: ["C++"],
         icon: "far fa-image fa-lg",
         links: { repo: { id: "Repo", link: "https://github.com/duongch4/lossy-image-compression/" } }
@@ -102,7 +116,7 @@ export const projectsInfo: ProjectsInfo = {
         image: bioinformaticsImg,
         altStr: "Bioinformatics Image",
         title: "Bioinformatics",
-        description: ["Analyse cancer genomics"],
+        description: ["Cancer Genomics Analysis"],
         languages: ["R, edgeR", "ggplot2, MSqRob, GSEA"],
         icon: "fas fa-dna",
         links: { repo: { id: "Repo", link: "https://github.com/duongch4/genomics-proteomics-analysis/" } }
@@ -111,7 +125,7 @@ export const projectsInfo: ProjectsInfo = {
         image: multipleClassifiersImg,
         altStr: "Multiple Classifers Image",
         title: "Multiple Classifiers",
-        description: ["Classify cancer", "benign/malignant"],
+        description: ["Cancer Classifiers"],
         languages: ["R, ggplot2"],
         icon: "fas fa-dna",
         links: { repo: { id: "Repo", link: "https://github.com/duongch4/mammographic-classification/" } }
