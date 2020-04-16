@@ -1,9 +1,11 @@
 import * as React from "react";
-import { projectsInfo, ProjectLinks, ProjectInfo, ProjectsInfo } from "./ProjectsInfo";
+import { projectsInfo, ProjectLinks, ProjectInfo } from "./ProjectsInfo";
+import Log from "..//utils/Log";
 
 export class Projects extends React.Component<any, any> {
 
     public render() {
+        Log.info("TESTING");
         const projects: React.ReactElement[] = this.setProjects();
         return (
             <div id="projects" className="container-fluid">

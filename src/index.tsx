@@ -5,11 +5,15 @@ import {
     BrowserRouter as Router,
     Route,
     Switch,
-    withRouter,
+    withRouter as _withRouter,
 } from "react-router-dom";
 
 import { ScrollToTop } from "./components/utils/ScrollToTop";
 import { MainRoutes } from "./pages/MainRoutes";
+
+import { disableConsoleWindowIfNotSupported } from "./utils/NoConsoleSupport";
+
+disableConsoleWindowIfNotSupported();
 
 const rootElem = document.getElementById("root");
 let render = () => {
@@ -24,7 +28,7 @@ let render = () => {
         ,
         rootElem
     );
-}
+};
 
 if (module.hot) {
     const renderApp = render;
@@ -33,14 +37,15 @@ if (module.hot) {
         ReactDOM.render(
             <RedBox error={err} />,
             rootElem
-        )
-    }
+        );
+    };
     render = () => {
         try {
             renderApp();
         }
-        catch(error) {
-            console.error(error);
+        catch (error) {
+            const log = require("./utils/Log").default;
+            log.error(error, "In Render React-Redbox");
             renderErr(error);
         }
     };

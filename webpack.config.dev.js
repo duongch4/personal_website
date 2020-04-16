@@ -9,15 +9,42 @@ const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin"); // to use with transpileOnly in ts-loader
 const ForkTsCheckerNotifierWebpackPlugin = require("fork-ts-checker-notifier-webpack-plugin");
 const path = require("path");
+const dotenv = require("dotenv");
+const fs = require("fs");
 
 class WebpackConfig {
+
+    _common = {
+        envFilePath: path.resolve(__dirname, "./.env.dev"),
+        babelConfigPath: path.resolve(__dirname, "babel.config.js"),
+        nodeModulesPath: path.resolve(__dirname, "node_modules")
+    };
+
+    _client = {
+        instanceName: "client",
+
+        htmlTitle: "Chi Duong",
+        faviconPath: path.resolve(__dirname, "./src/assets/png/titleImg.png"),
+
+        entryTsPath: path.resolve(__dirname, "./src/index.tsx"),
+        entryHtmlPath: path.resolve(__dirname, "./src/index.html"),
+        allStylingPaths: path.resolve(__dirname, "./src/**/*.scss"),
+        distPath: path.resolve(__dirname, "./dist"),
+
+        coreJsPath: path.resolve(__dirname, "./node_modules", "core-js/stable"), // polyfill
+        regenetorRuntimePath: path.resolve(__dirname, "./node_modules", "regenerator-runtime/runtime"), // polyfill
+
+        tsconfigPath: path.resolve(__dirname, "./tsconfig.json"),
+        postcssConfigPath: path.resolve(__dirname, "postcss.config.js")
+    };
+
     setModeResolve() {
         return {
             mode: "development",
             devtool: "source-map",
             resolve: {
                 extensions: [".ts", ".tsx", ".js", ".json"],
-                modules: [path.resolve(__dirname, "node_modules")]
+                modules: [this._common.nodeModulesPath]
             },
         };
     }
@@ -25,9 +52,11 @@ class WebpackConfig {
     setTranspilationLoader() {
         return {
             test: /\.(ts|js)x?$/,
+            exclude: /@babel(?:\/|\\{1,2})runtime|core-js/,
             loader: "babel-loader",
             options: {
-                babelrc: true,
+                rootMode: "upward",
+                configFile: this._common.babelConfigPath,
                 cacheDirectory: true
             }
         };
@@ -56,6 +85,14 @@ class WebpackConfig {
                     options: {
                         sourceMap: true
                     }
+                },
+                {
+                    loader: "postcss-loader",
+                    options: {
+                        config: {
+                            path: this._client.postcssConfigPath
+                        }
+                    },
                 },
             ]
         };
@@ -99,14 +136,20 @@ class WebpackConfig {
         });
     }
 
-    setCommonPlugins(tsconfigPath, forBuildServerOnceToWatch = false) {
-        const base = [
+    setCommonPlugins(forBuildServerOnceToWatch = false) {
+        let base = [
             new webpack.optimize.OccurrenceOrderPlugin(),
             new MomentLocalesPlugin({
                 localesToKeep: ["en", "en-ca"],
             }),
             new webpack.HotModuleReplacementPlugin()
         ];
+        if (fs.existsSync(this._common.envFilePath)) {
+            const fromDotEnv = new webpack.DefinePlugin({
+                "process.env": JSON.stringify(dotenv.config({ path: this._common.envFilePath }).parsed)
+            });
+            base = [...base, fromDotEnv];
+        }
         if (forBuildServerOnceToWatch) {
             return base;
         }
@@ -115,7 +158,7 @@ class WebpackConfig {
                 ...base,
                 new ForkTsCheckerWebpackPlugin({
                     eslint: true,
-                    tsconfig: tsconfigPath
+                    tsconfig: this._client.tsconfigPath
                 }),
                 new ForkTsCheckerNotifierWebpackPlugin({
                     title: "TypeScript",
@@ -125,12 +168,12 @@ class WebpackConfig {
         }
     }
 
-    setDevServer(outPath) {
+    setDevServer() {
         return {
             open: true,
             port: 8000,
             hot: true,
-            contentBase: outPath,
+            contentBase: this._client.distPath,
             // watchContentBase: true, // watch the static shell html
             compress: true,
             historyApiFallback: true,
@@ -139,27 +182,22 @@ class WebpackConfig {
         };
     }
 
-    setClientConfig(
-        fromDir = "./client", entryTs = "index.tsx", entryHtml = "index.html",
-        toDir = "./dist/client", instanceName = "client", forBuild = false,
-        htmlTitle = "MERN", faviconPath = "./client/assets/png/titleImg.png",
-        tsconfigPath = "./tsconfig.client.json"
-    ) {
-        const entryTsPath = path.resolve(__dirname, fromDir, entryTs);
-        const entryHtmlPath = path.resolve(__dirname, fromDir, entryHtml);
-        const allStyles = path.resolve(__dirname, fromDir, "**", "*.scss");
-        const outPath = path.resolve(__dirname, toDir);
-
+    setClientConfig(forBuild = false) {
         return {
-            name: instanceName,
+            name: this._client.instanceName,
             target: "web",
             ...this.setModeResolve(),
-            entry: [entryTsPath].concat(glob.sync(allStyles)),
+            entry: {
+                main: [
+                    this._client.coreJsPath, this._client.regenetorRuntimePath,
+                    this._client.entryTsPath
+                ].concat(glob.sync(this._client.allStylingPaths))
+            },
             output: {
                 filename: "[name].js",
-                path: outPath,
+                path: this._client.distPath,
             },
-            devServer: this.setDevServer(outPath),
+            devServer: this.setDevServer(),
             module: {
                 rules: [
                     this.setJavascriptSourceMapLoader(),
@@ -176,18 +214,18 @@ class WebpackConfig {
                 ]
             },
             plugins: [
-                ...this.setCommonPlugins(tsconfigPath),
+                ...this.setCommonPlugins(),
                 new HtmlWebpackPlugin({
                     inject: true,
-                    template: entryHtmlPath,
-                    title: htmlTitle,
-                    favicon: faviconPath
+                    template: this._client.entryHtmlPath,
+                    title: this._client.htmlTitle,
+                    favicon: this._client.faviconPath
                 }),
                 new MiniCssExtractPlugin({
                     filename: "[name].css",
                     chunkfilename: "[id].css"
                 }),
-                new ImageminPlugin({}),
+                new ImageminPlugin({})
             ],
             externals: {
                 "react": "React",
@@ -200,16 +238,5 @@ class WebpackConfig {
 }
 
 module.exports = (env, argv) => {
-    let forBuild = true;
-
-    if (argv["stack"] === "watch") {
-        forBuild = false;
-    }
-
-    return new WebpackConfig().setClientConfig(
-        fromDir = "./src", entryTs = "index.tsx", entryHtml = "index.html",
-        toDir = "./dist", instanceName = "client", forBuild = forBuild,
-        htmlTitle = "Chi Duong", faviconPath = "./src/assets/png/titleImg.png",
-        tsconfigPath = path.resolve(__dirname, "./tsconfig.json")
-    );
+    return new WebpackConfig().setClientConfig(argv["stack"] !== "watch");
 };

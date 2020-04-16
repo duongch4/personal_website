@@ -51,8 +51,8 @@ export const projectsInfo: ProjectsInfo = {
         description: ["Disney Data Visualisation"],
         languages: ["JavaScript, D3"],
         icon: disneyIcon,
-        links: { 
-            repo: { id: "Repo", link: "https://github.com/duongch4/cs436-disney/"},
+        links: {
+            repo: { id: "Repo", link: "https://github.com/duongch4/cs436-disney/" },
             description: "https://duongch4.github.io/cs436-disney/"
         }
     },
