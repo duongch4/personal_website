@@ -14,13 +14,13 @@ const fs = require("fs");
 
 class WebpackConfig {
 
-    #common = {
+    common = {
         envFilePath: path.resolve(__dirname, "./.env.dev"),
         babelConfigPath: path.resolve(__dirname, "babel.config.js"),
         nodeModulesPath: path.resolve(__dirname, "node_modules")
     };
 
-    #client = {
+    client = {
         instanceName: "client",
 
         htmlTitle: "Chi Duong",
@@ -44,7 +44,7 @@ class WebpackConfig {
             devtool: "source-map",
             resolve: {
                 extensions: [".ts", ".tsx", ".js", ".json"],
-                modules: [this.#common.nodeModulesPath]
+                modules: [this.common.nodeModulesPath]
             },
         };
     }
@@ -56,7 +56,7 @@ class WebpackConfig {
             loader: "babel-loader",
             options: {
                 rootMode: "upward",
-                configFile: this.#common.babelConfigPath,
+                configFile: this.common.babelConfigPath,
                 cacheDirectory: true
             }
         };
@@ -90,7 +90,7 @@ class WebpackConfig {
                     loader: "postcss-loader",
                     options: {
                         config: {
-                            path: this.#client.postcssConfigPath
+                            path: this.client.postcssConfigPath
                         }
                     },
                 },
@@ -144,9 +144,9 @@ class WebpackConfig {
             }),
             new webpack.HotModuleReplacementPlugin()
         ];
-        if (fs.existsSync(this.#common.envFilePath)) {
+        if (fs.existsSync(this.common.envFilePath)) {
             const fromDotEnv = new webpack.DefinePlugin({
-                "process.env": JSON.stringify(dotenv.config({ path: this.#common.envFilePath }).parsed)
+                "process.env": JSON.stringify(dotenv.config({ path: this.common.envFilePath }).parsed)
             });
             base = [...base, fromDotEnv];
         }
@@ -158,7 +158,7 @@ class WebpackConfig {
                 ...base,
                 new ForkTsCheckerWebpackPlugin({
                     eslint: true,
-                    tsconfig: this.#client.tsconfigPath
+                    tsconfig: this.client.tsconfigPath
                 }),
                 new ForkTsCheckerNotifierWebpackPlugin({
                     title: "TypeScript",
@@ -173,7 +173,7 @@ class WebpackConfig {
             open: true,
             port: 8000,
             hot: true,
-            contentBase: this.#client.distPath,
+            contentBase: this.client.distPath,
             // watchContentBase: true, // watch the static shell html
             compress: true,
             historyApiFallback: true,
@@ -184,18 +184,18 @@ class WebpackConfig {
 
     setClientConfig(forBuild = false) {
         return {
-            name: this.#client.instanceName,
+            name: this.client.instanceName,
             target: "web",
             ...this.setModeResolve(),
             entry: {
                 main: [
-                    this.#client.coreJsPath, this.#client.regenetorRuntimePath,
-                    this.#client.entryTsPath
-                ].concat(glob.sync(this.#client.allStylingPaths))
+                    this.client.coreJsPath, this.client.regenetorRuntimePath,
+                    this.client.entryTsPath
+                ].concat(glob.sync(this.client.allStylingPaths))
             },
             output: {
                 filename: "[name].js",
-                path: this.#client.distPath,
+                path: this.client.distPath,
             },
             devServer: this.setDevServer(),
             module: {
@@ -217,9 +217,9 @@ class WebpackConfig {
                 ...this.setCommonPlugins(),
                 new HtmlWebpackPlugin({
                     inject: true,
-                    template: this.#client.entryHtmlPath,
-                    title: this.#client.htmlTitle,
-                    favicon: this.#client.faviconPath
+                    template: this.client.entryHtmlPath,
+                    title: this.client.htmlTitle,
+                    favicon: this.client.faviconPath
                 }),
                 new MiniCssExtractPlugin({
                     filename: "[name].css",
