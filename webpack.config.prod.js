@@ -14,13 +14,13 @@ const dotenv = require("dotenv");
 
 class WebpackConfig {
 
-    _common = {
+    #common = {
         envFilePath: path.resolve(__dirname, "./.env.dev"),
         babelConfigPath: path.resolve(__dirname, "babel.config.js"),
         nodeModulesPath: path.resolve(__dirname, "node_modules")
     };
 
-    _client = {
+    #client = {
         instanceName: "client",
 
         htmlTitle: "Chi Duong",
@@ -45,7 +45,7 @@ class WebpackConfig {
             mode: "production",
             resolve: {
                 extensions: [".ts", ".tsx", ".js", ".json"],
-                modules: [this._common.nodeModulesPath]
+                modules: [this.#common.nodeModulesPath]
             },
         };
     }
@@ -57,7 +57,7 @@ class WebpackConfig {
             loader: "babel-loader",
             options: {
                 rootMode: "upward",
-                configFile: this._common.babelConfigPath,
+                configFile: this.#common.babelConfigPath,
                 cacheDirectory: true
             }
         };
@@ -92,7 +92,7 @@ class WebpackConfig {
                     loader: "postcss-loader",
                     options: {
                         config: {
-                            path: this._client.postcssConfigPath
+                            path: this.#client.postcssConfigPath
                         }
                     },
                 },
@@ -154,15 +154,15 @@ class WebpackConfig {
             }),
             new ForkTsCheckerWebpackPlugin({
                 eslint: true,
-                tsconfig: this._client.tsconfigPath,
+                tsconfig: this.#client.tsconfigPath,
                 async: false, // check type/lint first then build
                 // workers: ForkTsCheckerWebpackPlugin.TWO_CPUS_FREE // recommended - leave two CPUs free (one for build, one for system)
             }),
             new webpack.EnvironmentPlugin(envkeys.ENV_KEYS) // For CI production process!!!
         ];
-        if (fs.existsSync(this._common.envFilePath)) {
+        if (fs.existsSync(this.#common.envFilePath)) {
             const fromDotEnv = new webpack.DefinePlugin({
-                "process.env": JSON.stringify(dotenv.config({ path: this._common.envFilePath }).parsed)
+                "process.env": JSON.stringify(dotenv.config({ path: this.#common.envFilePath }).parsed)
             });
             return [...plugins, fromDotEnv];
         }
@@ -171,19 +171,19 @@ class WebpackConfig {
 
     setClientConfig() {
         return {
-            name: this._client.instanceName,
+            name: this.#client.instanceName,
             target: "web",
             ...this.setModeResolve(),
             entry: {
                 main: [
-                    this._client.coreJsPath, this._client.regenetorRuntimePath,
-                    this._client.entryTsPath
-                ].concat(glob.sync(this._client.allStylingPaths)),
-                pageIntro: this._client.pageIntroPath
+                    this.#client.coreJsPath, this.#client.regenetorRuntimePath,
+                    this.#client.entryTsPath
+                ].concat(glob.sync(this.#client.allStylingPaths)),
+                pageIntro: this.#client.pageIntroPath
             },
             output: {
                 filename: "[name].[contenthash:8].js",
-                path: this._client.distPath,
+                path: this.#client.distPath,
             },
             module: {
                 rules: [
@@ -222,9 +222,9 @@ class WebpackConfig {
                 ...this.setCommonPlugins(),
                 new HtmlWebpackPlugin({
                     inject: true,
-                    template: this._client.entryHtmlPath,
-                    title: this._client.htmlTitle,
-                    favicon: this._client.faviconPath,
+                    template: this.#client.entryHtmlPath,
+                    title: this.#client.htmlTitle,
+                    favicon: this.#client.faviconPath,
                     hash: true,
                     minify: {
                         removeComments: true,
