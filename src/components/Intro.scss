@@ -1,31 +1,31 @@
-#home {
+#intro {
     background-color: white;
     padding: 2em 10%;
     padding: var(--padding-section);
 }
 
-#home .row {
+#intro .row {
     padding-top: 3em;
 }
 
-#home hr {
+#intro hr {
     border-color: black;
     width: 50%;
 }
 
-#home p strong {
+#intro p strong {
     color: rgb(67, 147, 179);
 }
 
-#home h6 {
+#intro h6 {
     color: rgb(50, 112, 136);
 }
 
-#home .social-icons-sect {
+#intro .social-icons-sect {
     margin: 1em;
 }
 
-#home .social-icons {
+#intro .social-icons {
     color: black;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
@@ -33,16 +33,16 @@
     margin: 0 0.5em 0 0.5em;
 }
 
-#home .social-icons:hover {
+#intro .social-icons:hover {
     color: #DCAF68;
     font-size: 2.2em;
 }
 
-#home .pdf-icon {
+#intro .pdf-icon {
     font-size: 1.1em;
 }
 
-#home .resume-button {
+#intro .resume-button {
     font-family: "Open Sans";
     font-weight: bold;
     font-size: 1.25em;
@@ -56,18 +56,18 @@
     cursor: pointer;
 }
 
-#home .resume-button:hover {
+#intro .resume-button:hover {
     background-color: #DCAF68;
     border-color: #DCAF68;
     color: white;
 }
 
-#home .img-sect {
+#intro .img-sect {
     overflow: hidden;
     margin: 0;
 }
 
-#home .home-img {
+#intro .home-img {
     display: block;
     border-radius: 50%;
     width: 100%;

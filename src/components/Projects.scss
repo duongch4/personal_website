@@ -4,6 +4,10 @@
     padding: var(--padding-section);
 }
 
+#projects > .row {
+    padding-top: 3em;
+}
+
 .item {
     padding: 0;
     border: 5px solid black;
