@@ -7,39 +7,16 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin"); // to use with transpileOnly in ts-loader
-const path = require("path");
 const envkeys = require("./envkeys.config");
 const fs = require("fs");
 const dotenv = require("dotenv");
+const webpackConstants = require("./webpack.config.const");
 
 class WebpackConfig {
 
     constructor() {
-        this.common = {
-            envFilePath: path.resolve(__dirname, "./.env.dev"),
-            babelConfigPath: path.resolve(__dirname, "babel.config.js"),
-            nodeModulesPath: path.resolve(__dirname, "node_modules")
-        };
-    
-        this.client = {
-            instanceName: "client",
-    
-            htmlTitle: "Chi Duong",
-            faviconPath: path.resolve(__dirname, "./src/assets/png/titleImg.png"),
-    
-            entryTsPath: path.resolve(__dirname, "./src/index.tsx"),
-            entryHtmlPath: path.resolve(__dirname, "./src/index.html"),
-            allStylingPaths: path.resolve(__dirname, "./src/**/*.scss"),
-            distPath: path.resolve(__dirname, "./dist"),
-    
-            coreJsPath: path.resolve(__dirname, "./node_modules", "core-js/stable"), // polyfill
-            regenetorRuntimePath: path.resolve(__dirname, "./node_modules", "regenerator-runtime/runtime"), // polyfill
-    
-            tsconfigPath: path.resolve(__dirname, "./tsconfig.json"),
-            postcssConfigPath: path.resolve(__dirname, "postcss.config.js"),
-    
-            homePagePath: path.resolve(__dirname, "./src/pages/home/HomePage.tsx")
-        };
+        this.common = webpackConstants.common;
+        this.client = {...webpackConstants.client, ...webpackConstants.clientPages};
     }
 
     setModeResolve() {
