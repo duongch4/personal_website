@@ -14,29 +14,31 @@ const fs = require("fs");
 
 class WebpackConfig {
 
-    common = {
-        envFilePath: path.resolve(__dirname, "./.env.dev"),
-        babelConfigPath: path.resolve(__dirname, "babel.config.js"),
-        nodeModulesPath: path.resolve(__dirname, "node_modules")
-    };
+    constructor() {
+        this.common = {
+            envFilePath: path.resolve(__dirname, "./.env.dev"),
+            babelConfigPath: path.resolve(__dirname, "babel.config.js"),
+            nodeModulesPath: path.resolve(__dirname, "node_modules")
+        };
 
-    client = {
-        instanceName: "client",
-
-        htmlTitle: "Chi Duong",
-        faviconPath: path.resolve(__dirname, "./src/assets/png/titleImg.png"),
-
-        entryTsPath: path.resolve(__dirname, "./src/index.tsx"),
-        entryHtmlPath: path.resolve(__dirname, "./src/index.html"),
-        allStylingPaths: path.resolve(__dirname, "./src/**/*.scss"),
-        distPath: path.resolve(__dirname, "./dist"),
-
-        coreJsPath: path.resolve(__dirname, "./node_modules", "core-js/stable"), // polyfill
-        regenetorRuntimePath: path.resolve(__dirname, "./node_modules", "regenerator-runtime/runtime"), // polyfill
-
-        tsconfigPath: path.resolve(__dirname, "./tsconfig.json"),
-        postcssConfigPath: path.resolve(__dirname, "postcss.config.js")
-    };
+        this.client = {
+            instanceName: "client",
+    
+            htmlTitle: "Chi Duong",
+            faviconPath: path.resolve(__dirname, "./src/assets/png/titleImg.png"),
+    
+            entryTsPath: path.resolve(__dirname, "./src/index.tsx"),
+            entryHtmlPath: path.resolve(__dirname, "./src/index.html"),
+            allStylingPaths: path.resolve(__dirname, "./src/**/*.scss"),
+            distPath: path.resolve(__dirname, "./dist"),
+    
+            coreJsPath: path.resolve(__dirname, "./node_modules", "core-js/stable"), // polyfill
+            regenetorRuntimePath: path.resolve(__dirname, "./node_modules", "regenerator-runtime/runtime"), // polyfill
+    
+            tsconfigPath: path.resolve(__dirname, "./tsconfig.json"),
+            postcssConfigPath: path.resolve(__dirname, "postcss.config.js")
+        };
+    }
 
     setModeResolve() {
         return {
