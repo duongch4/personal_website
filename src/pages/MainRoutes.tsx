@@ -4,21 +4,19 @@ import {
     Switch,
 } from "react-router-dom";
 
-import { IntroPage } from "./intro/IntroPage";
+import { Header } from "../components/Header";
+import { Contact } from "../components/Contact";
+import { Footer } from "../components/Footer";
 
-export class MainRoutes extends React.Component<any, any> {
-    public render() {
-        return (
-            <Switch>
-                <Route
-                    path={`/`}
-                    component={IntroPage}
-                />
-                {/* <Route
-                    path={`/the-second-route`}
-                    component={Contact}
-                /> */}
-            </Switch>
-        );
-    }
-}
+import { HomePage } from "./home/HomePage";
+
+export const MainRoutes = () => (
+    <div id="main-routes">
+        <Header />
+        <Switch>
+            <Route path={`/`} component={HomePage} />
+        </Switch>
+        <Contact />
+        <Footer />
+    </div>
+);
