@@ -38,7 +38,7 @@ class WebpackConfig {
             tsconfigPath: path.resolve(__dirname, "./tsconfig.json"),
             postcssConfigPath: path.resolve(__dirname, "postcss.config.js"),
     
-            pageIntroPath: path.resolve(__dirname, "./src/pages/intro/IntroPage.tsx")
+            homePagePath: path.resolve(__dirname, "./src/pages/home/HomePage.tsx")
         };
     }
 
@@ -181,7 +181,7 @@ class WebpackConfig {
                     this.client.coreJsPath, this.client.regenetorRuntimePath,
                     this.client.entryTsPath
                 ].concat(glob.sync(this.client.allStylingPaths)),
-                pageIntro: this.client.pageIntroPath
+                homePage: this.client.homePagePath
             },
             output: {
                 filename: "[name].[contenthash:8].js",
