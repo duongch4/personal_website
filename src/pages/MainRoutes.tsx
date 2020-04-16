@@ -5,18 +5,18 @@ import {
 } from "react-router-dom";
 
 import { Header } from "../components/Header";
-import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
 
 import { HomePage } from "./home/HomePage";
+import { NotFoundPage } from "./notfound/NotFoundPage";
 
 export const MainRoutes = () => (
     <div id="main-routes">
         <Header />
         <Switch>
-            <Route path={`/`} component={HomePage} />
+            <Route exact path={`/`} component={HomePage} />
+            <Route component={NotFoundPage} />
         </Switch>
-        <Contact />
         <Footer />
     </div>
 );
