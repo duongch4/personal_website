@@ -64,6 +64,7 @@ export const projectsInfo: ProjectsInfo = {
         languages: ["C++, OpenGL"],
         icon: "fas fa-gamepad",
         links: {
+            repo: { id: "Repo", link: "https://github.com/duongch4/capture_the_castle/" },
             zipX64: { id: "Executable Zip (x64)", link: gameZipX64 },
             zipX86: { id: "Executable Zip (x86)", link: gameZipX86 },
             video: { id: "Gameplay", link: gameVideo }
