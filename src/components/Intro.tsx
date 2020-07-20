@@ -14,9 +14,11 @@ export const Intro = () => (
                 <h1>Hi, I'm Bang Chi Duong!</h1>
                 <hr />
                 <p>
-                    I'm an aspiring <strong>web developer</strong>{" "}
-                    and <strong>machine learning scientist</strong>{" "}
-                    based in Vancouver.
+                    I'm a <strong>Data Scientist</strong> based in Vancouver.
+                </p>
+                <p>
+                    I'm keen on building <strong>scalable</strong>{" "}
+                    products through <strong>cloud and web</strong> services.
                 </p>
 
                 <h6>Connect with me</h6>
