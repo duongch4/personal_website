@@ -2,55 +2,51 @@ import React from "react";
 import { projectsInfo, ProjectLinks, ProjectInfo } from "./ProjectsInfo";
 
 export const Projects = () => {
-    const setSpanList = (spanList: string[]): React.ReactElement[] => (
+    const renderSpanList = (spanList: string[]): React.ReactElement[] => (
         spanList.map((value, index) => (<span className="span-desc" key={index}><strong>{value}</strong></span>))
     );
 
-    const setDescription = (links: ProjectLinks, description: string[]): React.ReactElement => (
+    const renderDescription = (links: ProjectLinks, description: string[]): React.ReactElement => (
         links.description
-            ? (<p><a href={links.description} target="blank" rel="noopener noreferer">{setSpanList(description)}</a></p>)
-            : <p>{setSpanList(description)}</p>
+            ? (<p><a href={links.description} target="blank" rel="noopener noreferer">{renderSpanList(description)}</a></p>)
+            : <p>{renderSpanList(description)}</p>
     );
 
-    const setLinks = (links: ProjectLinks): React.ReactElement => (
+    const renderLink = (link: string, id: string, iconClassName: string): React.ReactElement => (
+        <p><a href={link} target="_blank" rel="noopener noreferrer">
+            {id} <i className={iconClassName} aria-hidden="true" />
+        </a></p>
+    );
+
+    const renderLinks = (links: ProjectLinks): React.ReactElement => (
         <div>
             {links.repo ? (
-                <p><a href={links.repo.link} target="_blank" rel="noopener noreferrer">
-                    {links.repo.id} <i className="fab fa-github" aria-hidden="true" />
-                </a></p>
+                renderLink(links.repo.link, links.repo.id, "fab fa-github")
             ) : undefined}
             {links.pdf ? (
-                <p><a href={links.pdf.link} target="_blank" rel="noopener noreferrer">
-                    {links.pdf.id} <i className="fas fa-file-pdf" aria-hidden="true" />
-                </a></p>
+                renderLink(links.pdf.link, links.pdf.id, "fas fa-file-pdf")
             ) : undefined}
             {links.video ? (
-                <p><a href={links.video.link} target="_blank" rel="noopener noreferrer">
-                    {links.video.id} <i className="fas fa-video" aria-hidden="true" />
-                </a></p>
+                renderLink(links.video.link, links.video.id, "fas fa-video")
             ) : undefined}
             {links.zipX64 ? (
-                <p><a href={links.zipX64.link} target="_blank" rel="noopener noreferrer">
-                    {links.zipX64.id} <i className="fas fa-file-archive" aria-hidden="true" />
-                </a></p>
+                renderLink(links.zipX64.link, links.zipX64.id, "fas fa-file-archive")
             ) : undefined}
             {links.zipX86 ? (
-                <p><a href={links.zipX86.link} target="_blank" rel="noopener noreferrer">
-                    {links.zipX86.id} <i className="fas fa-file-archive" aria-hidden="true" />
-                </a></p>
+                renderLink(links.zipX86.link, links.zipX86.id, "fas fa-file-archive")
             ) : undefined}
         </div>
     );
 
-    const setProject = (project: ProjectInfo): React.ReactElement => (
+    const renderProject = (project: ProjectInfo): React.ReactElement => (
         <div className="col-lg-4 mb-4">
             <div className="item col-md-12">
                 <img src={project.image} className="thumb-img" alt={project.altStr} />
                 <div className="overlay">
                     <div className="text">
-                        {setDescription(project.links, project.description)}
-                        <p>{setSpanList(project.languages)}</p>
-                        {setLinks(project.links)}
+                        {renderDescription(project.links, project.description)}
+                        <p>{renderSpanList(project.languages)}</p>
+                        {renderLinks(project.links)}
                     </div>
                 </div>
             </div>
@@ -64,31 +60,20 @@ export const Projects = () => {
         </div>
     );
 
-    const setProjects = (): React.ReactElement[] => {
+    const renderProjects = (): React.ReactElement[] => {
         const projects: React.ReactElement[] = [];
         for (const id in projectsInfo) {
-            projects.push(setProject(projectsInfo[id]));
+            projects.push(renderProject(projectsInfo[id]));
         }
         return projects;
     };
 
-    const renderProjects = (projects: React.ReactElement[]): React.ReactElement[] => {
-        const result: React.ReactElement[] = [];
-        for (let i = 0; i < projects.length; i += 3) {
-            result.push(<div className="row">{projects[i]}{projects[i + 1]}{projects[i + 2]}</div>);
-        }
-        return result;
-    };
-
-    const render = () => {
-        const projects: React.ReactElement[] = setProjects();
-        return (
-            <div id="projects" className="container-fluid">
-                <div className="row header"><h2>Projects</h2></div>
-                {renderProjects(projects)}
+    return (
+        <div id="projects" className="container-fluid">
+            <div className="row header"><h2>Projects</h2></div>
+            <div className="row">
+                {renderProjects()}
             </div>
-        );
-    };
-
-    return render();
+        </div>
+    );
 };
