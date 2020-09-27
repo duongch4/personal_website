@@ -1,34 +1,36 @@
-#profile {
-    background-color: whitesmoke;
-    padding: 2em 10%;
-    padding: var(--padding-section);
+.profile {
+    // background-color: whitesmoke;
+    background-color: darken(white, 15%);
 }
 
-#profile .technical-skills {
+.profile h2 {
+    $clr-main: var(--clr-main, #DCAF68);
+    color: darken($clr-main, 30%);
+}
+
+.technical-skills {
     padding: 1.5em;
-    /* border-right: 1px solid black; */
+    color: var(--clr-dark-blue, rgb(26, 91, 117));
 }
 
-#profile .technical-skills h4 {
-    color: rgb(50, 112, 136);
+.devicon {
+    margin: 0.2em;
+    width: 2.5rem;
+}
+
+.profile-text {
     text-align: left;
 }
 
-#profile .icons-sect {
-    text-align: left;
-    padding: 1em;
+.profile-text a {
+    text-decoration: none;
+    font-weight: bold;
 }
 
-#profile [class^="devicon"] {
-    margin: 0.1em;
-    font-size: 1.5em;
-    width: 1.5em;
+.a--university {
+    color: var(--clr-dark-blue, rgb(26, 91, 117));
 }
 
-#profile .profile-text {
-    text-align: left;
-}
-
-#profile .fa-linkedin{
-    font-size: 3em;
+.a--let-me-know {
+    color: darken(red, 20%);
 }

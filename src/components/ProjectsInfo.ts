@@ -1,19 +1,35 @@
-import * as bioinformaticsImg from "../assets/png/bioinformatics.png";
-import * as imageCompressionImg from "../assets/png/imageCompression.png";
-import * as deepClothImg from "../assets/png/deepCloth.png";
-import * as movieAppImg from "../assets/png/movieApp.png";
-import * as multipleClassifiersImg from "../assets/png/multipleClassifiers.png";
-import * as objectDetectionImg from "../assets/jpg/objectDetection.jpg";
-import * as gameImg from "../assets/png/CaptureTheCastle.png";
-import * as disneyImg from "../assets/png/disney.png";
-import * as disneyIcon from "../assets/svg/mickey.svg";
+import bioinformaticsImg from "../assets/png/bioinformatics.png";
+import bioinformaticsImgWebp from "../assets/webp/bioinformatics.webp";
 
-import * as deepClothPdf from "../assets/pdf/DeepClothSCA.pdf";
-import * as deepClothVid from "../assets/mp4/DeepClothSCA.mp4";
+import imageCompressionImg from "../assets/png/imageCompression.png";
+import imageCompressionImgWebp from "../assets/webp/imageCompression.webp";
 
-import * as gameZipX64 from "../assets/7z/CaptureTheCastle-v1-x64.7z";
-import * as gameZipX86 from "../assets/7z/CaptureTheCastle-v1-x86.7z";
-import * as gameVideo from "../assets/mp4/CaptureTheCastle.mp4";
+import deepClothImg from "../assets/png/deepCloth.png";
+import deepClothImgWebp from "../assets/webp/deepCloth.webp";
+
+import movieAppImg from "../assets/png/movieApp.png";
+import movieAppImgWebp from "../assets/webp/movieApp.webp";
+
+import multipleClassifiersImg from "../assets/png/multipleClassifiers.png";
+import multipleClassifiersImgWebp from "../assets/webp/multipleClassifiers.webp";
+
+import objectDetectionImg from "../assets/jpg/objectDetection.jpg";
+import objectDetectionImgWebp from "../assets/webp/objectDetection.webp";
+
+import gameImg from "../assets/png/CaptureTheCastle.png";
+import gameImgWebp from "../assets/webp/CaptureTheCastle.webp";
+
+import disneyImg from "../assets/png/disney.png";
+import disneyImgWebp from "../assets/webp/disney.webp";
+
+import disneyIcon from "../assets/svg/mickey.svg";
+
+import deepClothPdf from "../assets/pdf/DeepClothSCA.pdf";
+import deepClothVid from "../assets/mp4/DeepClothSCA.mp4";
+
+import gameZipX64 from "../assets/7z/CaptureTheCastle-v1-x64.7z";
+import gameZipX86 from "../assets/7z/CaptureTheCastle-v1-x86.7z";
+import gameVideo from "../assets/mp4/CaptureTheCastle.mp4";
 
 export type LinkName = {
     id: string;
@@ -30,7 +46,10 @@ export type ProjectLinks = {
 };
 
 export type ProjectInfo = {
-    image: string;
+    image: {
+        webp: any;
+        norm: any;
+    };
     altStr: string;
     title: string;
     description: string[];
@@ -45,7 +64,10 @@ export type ProjectsInfo = {
 
 export const projectsInfo: ProjectsInfo = {
     disney: {
-        image: disneyImg,
+        image: {
+            webp: disneyImgWebp,
+            norm: disneyImg
+        },
         altStr: "Disney Image",
         title: "The Disney Story",
         description: ["Disney Data Visualisation"],
@@ -57,7 +79,10 @@ export const projectsInfo: ProjectsInfo = {
         }
     },
     game: {
-        image: gameImg,
+        image: {
+            webp: gameImgWebp,
+            norm: gameImg
+        },
         altStr: "Capture The Castle Image",
         title: "Capture The Castle",
         description: ["2D 2-Player Game"],
@@ -71,7 +96,10 @@ export const projectsInfo: ProjectsInfo = {
         }
     },
     research: {
-        image: deepClothImg,
+        image: {
+            webp: deepClothImgWebp,
+            norm: deepClothImg
+        },
         altStr: "Deep Cloth Image",
         title: "Subspace Neural Physics",
         description: ["Fast Data-Driven", "Interactive Simulation"],
@@ -84,7 +112,10 @@ export const projectsInfo: ProjectsInfo = {
         }
     },
     movieApp: {
-        image: movieAppImg,
+        image: {
+            webp: movieAppImgWebp,
+            norm: movieAppImg
+        },
         altStr: "Movie App Image",
         title: "Movies Review App",
         description: ["Browse/Review Movies"],
@@ -96,7 +127,10 @@ export const projectsInfo: ProjectsInfo = {
         }
     },
     objectDetection: {
-        image: objectDetectionImg,
+        image: {
+            webp: objectDetectionImgWebp,
+            norm: objectDetectionImg
+        },
         altStr: "Object Detection Image",
         title: "Object Detection",
         description: ["Cars Detection Model"],
@@ -105,7 +139,10 @@ export const projectsInfo: ProjectsInfo = {
         links: { repo: { id: "Repo", link: "https://github.com/duongch4/objectDetection/" } }
     },
     imageCompression: {
-        image: imageCompressionImg,
+        image: {
+            webp: imageCompressionImgWebp,
+            norm: imageCompressionImg
+        },
         altStr: "Lossy Image Compression Image",
         title: "Lossy Image Compression",
         description: ["Lossy Image Compressor"],
@@ -114,7 +151,10 @@ export const projectsInfo: ProjectsInfo = {
         links: { repo: { id: "Repo", link: "https://github.com/duongch4/lossy-image-compression/" } }
     },
     bioinformatics: {
-        image: bioinformaticsImg,
+        image: {
+            webp: bioinformaticsImgWebp,
+            norm: bioinformaticsImg
+        },
         altStr: "Bioinformatics Image",
         title: "Bioinformatics",
         description: ["Cancer Genomics Analysis"],
@@ -123,7 +163,10 @@ export const projectsInfo: ProjectsInfo = {
         links: { repo: { id: "Repo", link: "https://github.com/duongch4/genomics-proteomics-analysis/" } }
     },
     multipleClassifiers: {
-        image: multipleClassifiersImg,
+        image: {
+            webp: multipleClassifiersImgWebp,
+            norm: multipleClassifiersImg
+        },
         altStr: "Multiple Classifers Image",
         title: "Multiple Classifiers",
         description: ["Cancer Classifiers"],

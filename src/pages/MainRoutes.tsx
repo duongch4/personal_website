@@ -5,7 +5,6 @@ import {
 } from "react-router-dom";
 
 import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
 
 import { HomePage } from "./home/HomePage";
 import { NotFoundPage } from "./notfound/NotFoundPage";
@@ -17,6 +16,5 @@ export const MainRoutes = () => (
             <Route exact path={`/`} component={HomePage} />
             <Route component={NotFoundPage} />
         </Switch>
-        <Footer />
     </div>
 );

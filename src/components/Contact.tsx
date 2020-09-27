@@ -1,15 +1,18 @@
-import * as React from "react";
-import * as contactImg from "../assets/png/contactImg.png";
-import * as resume from "../assets/pdf/BangChiDuong_Resume.pdf";
+import React from "react";
+import contactImg from "../assets/png/contactImg.png";
+import contactImgWebp from "../assets/webp/contactImg.webp";
+import resume from "../assets/pdf/BangChiDuong_Resume.pdf";
 
 export const Contact = () => (
     <div id="contact" className="container-fluid">
 
-        <div className="row header"><h2>Contact</h2></div>
+        <div className="text-left"><h2>Contact</h2></div>
 
         <div className="row">
-
-            <img src={contactImg} className="contact-img col-sm-6 img-fluid" alt="ContactImage" />
+            <picture className="col-sm-6 img-fluid">
+                <source srcSet={contactImgWebp} type="image/webp" className="contact-img" />
+                <img loading="lazy" src={contactImg} className="contact-img" alt="ContactImage" />
+            </picture>
 
             <div className="col-sm-6 text-center">
                 <h3>Let's Talk</h3>

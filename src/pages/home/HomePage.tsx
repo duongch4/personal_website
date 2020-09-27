@@ -6,7 +6,7 @@ import { Projects } from "../../components/Projects";
 import { Contact } from "../../components/Contact";
 
 export const HomePage = () => (
-    <div className="App">
+    <div className="container-fluid container-main">
         <Intro />
         <Profile />
         <Projects />
