@@ -12,6 +12,9 @@ npm run watch
 npm run build
 ```
 ## Run Production Build (Require Python):
+Copy the file "localhost.py" into directory "dist/"
+Open terminal inside "dist/" directory and run the script
 ```
-python -m http.server 8080
+python localhost.py
 ```
+Open browser at http://localhost:8080
