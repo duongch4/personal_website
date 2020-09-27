@@ -2,6 +2,7 @@ const webpack = require("webpack"); // access built-in plugins
 const glob = require("glob"); // sync all css files, no need to import css
 const TerserPlugin = require("terser-webpack-plugin"); // minify js: ES6
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // to build from html template
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // to extract css into it own file
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
@@ -11,6 +12,25 @@ const ForkTsCheckerNotifierWebpackPlugin = require("fork-ts-checker-notifier-web
 const dotenv = require("dotenv");
 const fs = require("fs");
 const webpackConstants = require("./webpack.config.const");
+
+/*
+* Custom plugin to trigger a compile when
+* saving files outside the bundle
+*/
+class WatchExternalFilesPlugin {
+    constructor(files = []) {
+        this.files = files;
+    }
+    // Define `apply` as its prototype method which is supplied with compiler as its argument
+    apply(compiler) {
+        if (this.files.length === 0) return;
+        // Specify the event hook to attach to
+        compiler.plugin("after-compile", (compilation, callback) => {
+            this.files.forEach(path => compilation.contextDependencies.add(path));
+            callback();
+        });
+    }
+}
 
 class WebpackConfig {
 
@@ -54,6 +74,7 @@ class WebpackConfig {
     setStyleLoader(forBuild = false) {
         const result = {
             test: /\.s?css$/,
+            exclude: /node_modules/,
             use: [
                 {
                     loader: "css-loader",
@@ -88,15 +109,38 @@ class WebpackConfig {
 
     setImageLoader() {
         return {
-            test: /\.(jpe?g|png|gif|svg)$/,
-            loader: "image-webpack-loader",
+            test: webpackConstants.client.imagesExts,
+            use: [
+                {
+                    loader: "image-webpack-loader",
+                    options: {
+                        mozjpeg: {
+                            progressive: true,
+                            quality: 65
+                        },
+                        optipng: {
+                            enabled: false,
+                        },
+                        pngquant: {
+                            quality: [0.65, 0.90],
+                            speed: 4
+                        },
+                        gifsicle: {
+                            interlaced: false,
+                        },
+                        webp: {
+                            quality: 75
+                        }
+                    }
+                }
+            ],
             enforce: "pre"
         };
     }
 
     setFileLoaderClient() {
         return {
-            test: /\.(jpe?g|png|gif|svg|pdf|mp4|7z)$/,
+            test: webpackConstants.client.assetsExts,
             use: [
                 {
                     loader: "file-loader",
@@ -160,10 +204,14 @@ class WebpackConfig {
             historyApiFallback: true,
             clientLogLevel: "info", // debug, trace, silent, warn, error
             stats: "minimal", // errors-only, errors-warnings
+            watchOptions: {
+                ignored: ["node_modules/**"]
+            },
         };
     }
 
     setClientConfig(forBuild = false) {
+        const manifest = require(this.client.manifestPwaPath);
         return {
             name: this.client.instanceName,
             target: "web",
@@ -200,20 +248,40 @@ class WebpackConfig {
                     inject: true,
                     template: this.client.entryHtmlPath,
                     title: this.client.htmlTitle,
-                    favicon: this.client.faviconPath
+                    meta: {
+                        "viewport": "width=device-width, initial-scale=1",
+                        "theme-color": manifest["theme_color"],
+                        "description": manifest["description"],
+                        // iOS
+                        "mobile-web-app-capable": "yes",
+                        "mobile-web-app-status-bar-style": "default", // or black
+                        "mobile-web-app-title": this.client.htmlTitle
+                    }
+                }),
+                new CopyWebpackPlugin({
+                    patterns: [
+                        this.client.manifestPwaPath,
+                        this.client.serviceWorkerPath,
+                        this.client.offlineHtmlPath,
+                        {
+                            from: this.client.iconsSrcPath,
+                            to: this.client.iconsDistPath
+                        }
+                    ],
                 }),
                 new MiniCssExtractPlugin({
                     filename: "[name].css",
                     chunkfilename: "[id].css"
                 }),
-                new ImageminPlugin({})
+                new ImageminPlugin({}),
+                new WatchExternalFilesPlugin(["./src"])
             ],
-            externals: {
-                "react": "React",
-                "react-dom": "ReactDOM",
-                "react-dom/server": "ReactDOMServer",
-                "lodash": "_"
-            },
+            // externals: {
+            //     "react": "React",
+            //     "react-dom": "ReactDOM",
+            //     "react-dom/server": "ReactDOMServer",
+            //     "lodash": "_"
+            // },
         };
     }
 }
