@@ -3,27 +3,26 @@ import ReactDOM from "react-dom";
 
 import {
     BrowserRouter as Router,
-    Route,
-    Switch,
     withRouter as _withRouter,
 } from "react-router-dom";
 
-import { ScrollToTop } from "./components/utils/ScrollToTop";
+import { ScrollToTop } from "./components/scrolltotop/ScrollToTop";
 import { MainRoutes } from "./pages/MainRoutes";
+import { Footer } from "./components/Footer";
 
 import { disableConsoleWindowIfNotSupported } from "./utils/NoConsoleSupport";
+import { loadServiceWorker } from "./serviceworker/LoadingServiceWorker";
 
 disableConsoleWindowIfNotSupported();
+loadServiceWorker();
 
 const rootElem = document.getElementById("root");
 let render = () => {
     ReactDOM.render(
         <Router>
-            <ScrollToTop>
-                <Switch>
-                    <Route path={"/"} component={MainRoutes} />
-                </Switch>
-            </ScrollToTop>
+            <ScrollToTop />
+            <MainRoutes />
+            <Footer />
         </Router>
         ,
         rootElem
@@ -50,7 +49,7 @@ if (module.hot) {
         }
     };
 
-    module.hot.accept("./pages/MainRoutes", () => render());
+    module.hot.accept("./index", () => render());
 }
 
 render();
