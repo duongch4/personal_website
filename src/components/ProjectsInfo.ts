@@ -1,6 +1,3 @@
-import bioinformaticsImg from "../assets/png/bioinformatics.png";
-import bioinformaticsImgWebp from "../assets/webp/bioinformatics.webp";
-
 import imageCompressionImg from "../assets/png/imageCompression.png";
 import imageCompressionImgWebp from "../assets/webp/imageCompression.webp";
 
@@ -24,12 +21,16 @@ import disneyImgWebp from "../assets/webp/disney.webp";
 
 import disneyIcon from "../assets/svg/mickey.svg";
 
-import deepClothPdf from "../assets/pdf/DeepClothSCA.pdf";
-import deepClothVid from "../assets/mp4/DeepClothSCA.mp4";
+import deepClothPdf from "../assets/pdf/DeepCloth_SCA.pdf";
+import deepClothVid from "../assets/mp4/DeepCloth_SCA.mp4";
 
 import gameZipX64 from "../assets/7z/CaptureTheCastle-v1-x64.7z";
 import gameZipX86 from "../assets/7z/CaptureTheCastle-v1-x86.7z";
 import gameVideo from "../assets/mp4/CaptureTheCastle.mp4";
+
+import prmt5Img from "../assets/png/prmt5.png";
+import prmt5ImgWebp from "../assets/webp/prmt5.webp";
+import prmt5Pdf from "../assets/pdf/PRMT5_NatureCommun.pdf";
 
 export type LinkName = {
     id: string;
@@ -63,6 +64,22 @@ export type ProjectsInfo = {
 };
 
 export const projectsInfo: ProjectsInfo = {
+    prmt5: {
+        image: {
+            webp: prmt5ImgWebp,
+            norm: prmt5Img
+        },
+        altStr: "PRMT5 Image",
+        title: "Drug Discovery",
+        description: ["PRMT5 inhibition", "disrupts splicing and", "stemness in glioblastoma"],
+        languages: ["R, MSqRob, GSEA"],
+        icon: "fas fa-dna",
+        links: {
+            description: "https://www.nature.com/articles/s41467-021-21204-5",
+            pdf: { id: "Paper", link: prmt5Pdf },
+            repo: { id: "My Contribution Repo", link: "https://github.com/duongch4/genomics-proteomics-analysis/" }
+        }
+    },
     disney: {
         image: {
             webp: disneyImgWebp,
@@ -95,7 +112,7 @@ export const projectsInfo: ProjectsInfo = {
             video: { id: "Gameplay", link: gameVideo }
         }
     },
-    research: {
+    deepCloth: {
         image: {
             webp: deepClothImgWebp,
             norm: deepClothImg
@@ -149,18 +166,6 @@ export const projectsInfo: ProjectsInfo = {
         languages: ["C++"],
         icon: "far fa-image fa-lg",
         links: { repo: { id: "Repo", link: "https://github.com/duongch4/lossy-image-compression/" } }
-    },
-    bioinformatics: {
-        image: {
-            webp: bioinformaticsImgWebp,
-            norm: bioinformaticsImg
-        },
-        altStr: "Bioinformatics Image",
-        title: "Bioinformatics",
-        description: ["Cancer Genomics Analysis"],
-        languages: ["R, edgeR", "ggplot2, MSqRob, GSEA"],
-        icon: "fas fa-dna",
-        links: { repo: { id: "Repo", link: "https://github.com/duongch4/genomics-proteomics-analysis/" } }
     },
     multipleClassifiers: {
         image: {
