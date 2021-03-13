@@ -6,9 +6,9 @@ import {
     withRouter as _withRouter,
 } from "react-router-dom";
 
-import { ScrollToTop } from "./components/scrolltotop/ScrollToTop";
+import { ScrollToTop } from "./components/scroll_to_top/ScrollToTop";
 import { MainRoutes } from "./pages/MainRoutes";
-import { Footer } from "./components/Footer";
+import { Footer } from "./components/footer/Footer";
 
 import { disableConsoleWindowIfNotSupported } from "./utils/NoConsoleSupport";
 import { loadServiceWorker } from "./serviceworker/LoadingServiceWorker";
