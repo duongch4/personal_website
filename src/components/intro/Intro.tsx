@@ -1,15 +1,15 @@
 import React from "react";
-import homeImg from "../assets/jpg/homeImg.jpg";
-import homeImgWebp from "../assets/webp/homeImg.webp";
-import resume from "../assets/pdf/BangChiDuong_Resume.pdf";
+import profileImage from "../../assets/jpg/profileImage.jpg";
+import profileImageWebp from "../../assets/webp/profileImage.webp";
+import resume from "../../assets/pdf/BangChiDuong_Resume.pdf";
 
 export const Intro = () => (
     <div className="container-fluid section intro">
         <div className="row">
             <div className="col-lg-4 d-none d-lg-block">
                 <picture>
-                    <source srcSet={homeImgWebp} type="image/webp" className="home-img img-fluid" />
-                    <img loading="lazy" src={homeImg} className="home-img img-fluid" alt="HomeImage" />
+                    <source srcSet={profileImageWebp} type="image/webp" className="home-img img-fluid" />
+                    <img loading="lazy" src={profileImage} className="home-img img-fluid" alt="HomeImage" />
                 </picture>
             </div>
             <div className="col-lg-8">
