@@ -4,7 +4,7 @@ import {
     Switch,
 } from "react-router-dom";
 
-import { Header } from "../components/Header";
+import { Header } from "../components/header/Header";
 
 import { HomePage } from "./home/HomePage";
 import { NotFoundPage } from "./notfound/NotFoundPage";
