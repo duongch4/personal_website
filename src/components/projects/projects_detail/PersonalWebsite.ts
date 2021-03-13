@@ -13,6 +13,6 @@ export const personalWebsite = {
     icon: "fas fa-briefcase",
     links: {
         description: "https://bangchi.ml",
-        repo: { id: "Repo", link: "https://github.com/duongch4/personal-website/" }
+        repo: { id: "Repo", link: "https://github.com/duongch4/personal_website/" }
     }
 };
