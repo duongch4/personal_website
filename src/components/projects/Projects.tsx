@@ -1,5 +1,6 @@
 import React from "react";
-import { projectsInfo, ProjectLinks, ProjectInfo } from "./ProjectsInfo";
+import { projectsInfo } from "./ProjectsInfo";
+import { ProjectLinks, ProjectInfo } from "./TypeProjectsInfo";
 
 export const Projects = () => {
     const renderSpanList = (spanList: string[]): React.ReactElement[] => (
