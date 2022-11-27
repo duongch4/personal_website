@@ -12,7 +12,7 @@ export const movieApp = {
     languages: ["React, JavaScript", "Express, MongoDB"],
     icon: "fas fa-film",
     links: {
-        description: "https://cs490-project-movie.herokuapp.com/",
-        repo: { id: "Repo", link: "https://github.com/duongch4/mern-passport-dev/" }
+        description: "https://cs490-movie-review.up.railway.app/",
+        repo: { id: "Repo", link: "https://github.com/duongch4/cs490/" }
     }
 };
