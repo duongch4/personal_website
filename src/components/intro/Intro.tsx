@@ -1,7 +1,7 @@
 import React from "react";
 import profileImage from "../../assets/jpg/profileImage.jpg";
 import profileImageWebp from "../../assets/webp/profileImage.webp";
-import resume from "../../assets/pdf/BangChiDuong_Resume.pdf";
+import resume from "../../assets/pdf/bangchiduong_resume.pdf";
 
 export const Intro = () => (
     <div className="container-fluid section intro">

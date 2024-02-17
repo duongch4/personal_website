@@ -1,7 +1,7 @@
 import React from "react";
 import contactImg from "../../assets/png/contactImg.png";
 import contactImgWebp from "../../assets/webp/contactImg.webp";
-import resume from "../../assets/pdf/BangChiDuong_Resume.pdf";
+import resume from "../../assets/pdf/bangchiduong_resume.pdf";
 
 export const Contact = () => (
     <div id="contact" className="container-fluid">
