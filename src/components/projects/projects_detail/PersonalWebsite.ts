@@ -8,11 +8,11 @@ export const personalWebsite = {
     },
     altStr: "Personal Website Image",
     title: "Personal Website",
-    description: ["https://bangchi.tk"],
+    description: ["https://bangchiduong.com"],
     languages: ["React, TypeScript", "Webpack, Babel"],
     icon: "fas fa-briefcase",
     links: {
-        description: "https://bangchi.tk",
+        description: "https://bangchiduong.com",
         repo: { id: "Repo", link: "https://github.com/duongch4/personal_website/" }
     }
 };
