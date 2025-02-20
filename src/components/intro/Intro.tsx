@@ -1,6 +1,5 @@
 import React from "react";
 import profileImage from "../../assets/jpg/profileImage.jpg";
-import profileImageWebp from "../../assets/webp/profileImage.webp";
 import resume from "../../assets/pdf/bangchiduong_resume.pdf";
 
 export const Intro = () => (
@@ -8,7 +7,6 @@ export const Intro = () => (
         <div className="row">
             <div className="col-lg-4 d-none d-lg-block">
                 <picture>
-                    <source srcSet={profileImageWebp} type="image/webp" className="home-img img-fluid" />
                     <img loading="lazy" src={profileImage} className="home-img img-fluid" alt="HomeImage" />
                 </picture>
             </div>
